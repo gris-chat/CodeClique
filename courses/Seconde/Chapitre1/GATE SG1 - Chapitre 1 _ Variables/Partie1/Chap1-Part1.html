@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Chapitre 1 - Partie 1</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-paper: #fdf6e3;
+            --primary: hsl(240, 36%, 50%);
+            --secondary: #27ae60;
+            --accent-1: #ffb74d;
+            --text-dark: #2c3e50;
+            --text-light: #555;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: var(--bg-paper);
+            margin: 0;
+            padding: 30px 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 950px;
+            background: #fff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--accent-1));
+            color: var(--text-dark);
+            padding: 20px;
+            border-radius: 8px;
+            text-align: left;
+            margin-bottom: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.4rem;
+        }
+
+        h1,
+        h2,
+        h3 {
+            text-align: center;
+            color: var(--text-dark);
+            margin-top: 0;
+        }
+
+        h1 {
+            font-size: 2.2rem;
+        }
+
+        h2 {
+            font-size: 1.8rem;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+        }
+
+        .section {
+            margin: 30px 0;
+            padding: 20px;
+            border-left: 6px solid var(--primary);
+            background: #f5f9ff;
+            border-radius: 8px;
+            box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.05);
+        }
+
+        .exercise {
+            margin: 20px 0;
+            padding: 20px;
+            background: #e8f5e9;
+            border-left: 6px solid var(--secondary);
+            border-radius: 8px;
+        }
+
+        .exercise h3 {
+            color: var(--secondary);
+            margin-top: 0;
+        }
+
+        .footer {
+            text-align: center;
+            font-size: 0.9rem;
+            color: var(--text-light);
+            margin-top: 40px;
+        }
+
+        ol,
+        ul {
+            margin-left: 30px;
+        }
+
+        code {
+            background: #f0f0f0;
+            padding: 2px 4px;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+        }
+
+        .logo {
+            max-width: 150px;
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <img src="logo.png" alt="CodeClique Logo" class="logo">
+            <div class="header-content">
+                <h1>Chapitre 1 : Les variables</h1>
+                <p>CodeClique - Pôle pédagogique</p>
+            </div>
+        </header>
+
+        <div class="section">
+            <h2 id="chapitre-1-partie-1-les-variables">Partie 1 : les variables</h2>
+            <p>En Python, une variable est un identifiant (une étiquette). Elle représente un espace réservé en mémoire
+                où l’on peut stocker une valeur.</p>
+
+
+
+            <h3 id="manipulation-des-variables"><strong>Manipulation des variables</strong></h3>
+            <p>L’opération d’<em>affectation</em> consiste à placer une valeur à droite du signe <code>=</code> et le
+                nom de la variable à gauche.</p>
+            <p><strong>Exemple</strong> : créer la variable <code>x</code> avec la valeur <code>2</code> :</p>
+            <code>&gt;&gt;&gt; x = 2</code>
+            <p>On peut ensuite la modifier :</p>
+            <code>&gt;&gt;&gt; x = 3</code>
+            <p>Après chaque affectation, la variable renvoie la dernière valeur assignée :</p>
+            <code>&gt;&gt;&gt; x = 2<br>&gt;&gt;&gt; y = x</code>
+            <p>Dans cet exemple, <code>y</code> vaut <code>2</code>.</p>
+        </div>
+
+        <!-- Combined exercise block for manipulation -->
+        <div class="exercise">
+            <h3>EXERCICES – Manipulation des variables</h3>
+            <ol>
+                <li><code>&gt;&gt;&gt; x = 3</code><br><code>&gt;&gt;&gt; y = x</code><br>Quelle est la valeur de
+                    <code>y</code> ?
+                </li>
+                <li><code>&gt;&gt;&gt; x = 56</code><br><code>&gt;&gt;&gt; y = 46</code><br><code>&gt;&gt;&gt; x = y</code><br>Quelles
+                    sont les valeurs finales de <code>x</code> et <code>y</code> ?</li>
+                <li>Associez à la variable <code>z</code> la valeur <code>4</code>.</li>
+            </ol>
+        </div>
+
+        <div class="section">
+            <h2 id="noms-de-variables"><strong>Noms de variables</strong></h2>
+            <p>Les noms peuvent contenir des lettres, des chiffres et le caractère souligné <code>_</code>. Ils ne
+                doivent pas commencer par un chiffre ou par <code>_</code>, et il faut éviter les mots réservés de
+                Python.</p>
+            <p>Exemple d’un bon nom : <code>nombre_bonbons</code>.</p>
+            <p>Python est sensible à la casse : <code>variable</code> et <code>Variable</code> sont différents.</p>
+        </div>
+
+        <!-- Combined exercise block for variable names -->
+        <div class="exercise">
+            <h3>EXERCICES – Noms de variables</h3>
+            <ol>
+                <li><code>&gt;&gt;&gt; variable = 3</code> → Que renvoie <code>variable</code> ?</li>
+                <li><code>&gt;&gt;&gt; variable = 45</code><br><code>&gt;&gt;&gt; Variable = 56</code> → Que renvoie
+                    <code>variable</code> et <code>Variable</code> ?
+                </li>
+                <li><code>&gt;&gt;&gt; test = 1</code><br><code>&gt;&gt;&gt; TEST = 0</code><br><code>&gt;&gt;&gt; TEST = test</code>
+                    → Que renvoie <code>TEST</code> et <code>test</code> ?</li>
+            </ol>
+            <p>Quels sont les noms de variables valides ?</p>
+            <ul>
+                <li>ballon d’or</li>
+                <li>Ballon d’or</li>
+                <li>ballon_d’or</li>
+                <li>Ballon_d’or</li>
+                <li>ballon_d_or</li>
+                <li>Ballon_d_or</li>
+                <li>_ballon_d_or</li>
+                <li>ballondor</li>
+                <li>BallondOR</li>
+                <li>ballon_DOR_456</li>
+                <li>8ALLONDOR</li>
+                <li>ballon08</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h3>Résumé</h3>
+            <p>Une variable associe un nom à une valeur via l’opération <code>=</code>. Elle peut être modifiée et
+                renvoie toujours la dernière valeur assignée.</p>
+            <p>Vous maîtrisez maintenant la création et l’utilisation des variables en Python ; la suite portera sur les
+                différents types de données.</p>
+        </div>
+
+        <div class="footer">CodeClique</div>
+    </div>
+</body>
+
+</html>

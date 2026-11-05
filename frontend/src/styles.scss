@@ -1,0 +1,105 @@
+
+// Include theming for Angular Material with `mat.theme()`.
+// This Sass mixin will define CSS variables that are used for styling Angular Material
+// components according to the Material 3 design spec.
+// Learn more about theming and how to use it for your application's
+// custom components at https://material.angular.dev/guide/theming
+@use '@angular/material' as mat;
+@use '_theme-colors' as codeclique-palette;
+
+@font-face {
+  font-family: 'Rubik';
+  font-style: normal;
+  src: url('../public/fonts/Rubik-VariableFont_wght.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Rubik';
+  font-style: italic;
+  src: url('../public/fonts/Rubik-Italic-VariableFont_wght.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  src: url('../public/fonts/Roboto-VariableFont_wdth\,wght.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Roboto';
+  font-style: italic;
+  src: url('../public/fonts/Roboto-Italic-VariableFont_wdth\,wght.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Roboto Mono';
+  font-style: normal;
+  src: url('../public/fonts/RobotoMono-VariableFont_wght.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Roboto Mono';
+  font-style: italic;
+  src: url('../public/fonts/RobotoMono-Italic-VariableFont_wght.ttf') format('truetype');
+}
+
+
+// Icons override
+@font-face {
+  font-family: 'Material Symbols Outlined';
+  font-style: normal;
+  src: url('../public/fonts/MaterialSymbolsOutlined-VariableFont_FILL\,GRAD\,opsz\,wght.ttf') format('truetype');
+}
+.material-symbols-outlined {
+  font-family: 'Material Symbols Outlined';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+}
+
+html {
+  @include mat.theme((
+    color: (
+      primary: codeclique-palette.$primary-palette,
+      tertiary: codeclique-palette.$tertiary-palette,
+    ),
+    typography: (
+      plain-family: Roboto,
+      brand-family: Rubik,
+    ),
+    density: 0,
+  ));
+  @include mat.system-classes();
+}
+
+body {
+  // Default the application to a light color theme. This can be changed to
+  // `dark` to enable the dark color theme, or to `light dark` to defer to the
+  // user's system settings.
+  // color-scheme: light;
+  // Overridden by the theming service.
+
+  // Set a default background, font and text colors for the application using
+  // Angular Material's system-level CSS variables. Learn more about these
+  // variables at https://material.angular.dev/guide/system-variables
+  background-color: var(--mat-sys-surface);
+  color: var(--mat-sys-on-surface);
+  font: var(--mat-sys-body-medium);
+
+  // Reset the user agent margin.
+  margin: 0;
+}
+/* You can add global styles to this file, and also import other style files */
+
+html, body, main {
+  height: 100%;
+  scrollbar-color: var(--mat-sys-primary) var(--mat-sys-surface);
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  line-height: normal;
+}

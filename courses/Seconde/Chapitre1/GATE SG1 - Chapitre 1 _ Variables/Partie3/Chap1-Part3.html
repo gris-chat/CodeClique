@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Chapitre 1 - Partie 3</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-paper: #fdf6e3;
+            --primary: hsl(240, 36%, 50%);
+            --secondary: #27ae60;
+            --accent-1: #ffb74d;
+            --text-dark: #2c3e50;
+            --text-light: #555;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: var(--bg-paper);
+            margin: 0;
+            padding: 30px 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 950px;
+            background: #fff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--accent-1));
+            color: var(--text-dark);
+            padding: 20px;
+            border-radius: 8px;
+            text-align: left;
+            margin-bottom: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.4rem;
+        }
+
+        h1,
+        h2 {
+            text-align: center;
+            color: var(--text-dark);
+            margin-top: 0;
+        }
+
+        h3 {
+            text-align: left;
+            color: var(--text-dark);
+            margin-top: 0;
+        }
+
+        h1 {
+            font-size: 2.2rem;
+        }
+
+        h2 {
+            font-size: 1.8rem;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+        }
+
+        .section {
+            margin: 30px 0;
+            padding: 20px;
+            border-left: 6px solid var(--primary);
+            background: #f5f9ff;
+            border-radius: 8px;
+            box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.05);
+        }
+
+        .exercise {
+            margin: 20px 0;
+            padding: 20px;
+            background: #e8f5e9;
+            border-left: 6px solid var(--secondary);
+            border-radius: 8px;
+        }
+
+        .exercise h3 {
+            color: var(--secondary);
+            margin-top: 0;
+        }
+
+        .footer {
+            text-align: center;
+            font-size: 0.9rem;
+            color: var(--text-light);
+            margin-top: 40px;
+        }
+
+        ol,
+        ul {
+            margin-left: 30px;
+        }
+
+        code {
+            background: #f0f0f0;
+            padding: 2px 4px;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+        }
+
+        .logo {
+            max-width: 150px;
+            display: block;
+        }
+
+        .header-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <img src="logo.png" alt="CodeClique Logo" class="logo">
+            <div class="header-content">
+                <h1>Chapitre 1 : Les variables</h1>
+                <p>CodeClique - Pôle pédagogique</p>
+            </div>
+        </header>
+
+        <!-- Section: Les opérations -->
+        <div class="section">
+            <h2>Partie 3 : Les opérations</h2>
+            <p>Il est intéressant d'avoir des variables mais encore plus de pouvoir faire des opérations avec ! Pour
+                plus de clarté (et de simplicité), nous allons énumérer les opérations en fonction des types !</p>
+
+            <h3>Int - entier :</h3>
+            <p>L'addition <code>+</code>, la multiplication <code>*</code>, la soustraction <code>-</code>, la division
+                <code>/</code> sont les principaux. Il y a également <code>**</code> ou <code>^</code> pour la
+                puissance. On peut également utiliser la division euclidienne avec <code>//</code> le quotient et
+                <code>%</code> le reste.
+            </p>
+            <p><strong>Ex : opération --&gt;&gt; python</strong></p>
+            <ul>
+                <li>1+2 --&gt;&gt; <code>1+2</code></li>
+                <li>1x2 --&gt;&gt; <code>1*2</code></li>
+                <li>2-1 --&gt;&gt; <code>2-1</code></li>
+                <li>2÷1 --&gt;&gt; <code>2/1</code></li>
+                <li>2puissance3 --&gt;&gt; <code>2**3</code> ou <code>2^3</code></li>
+            </ul>
+
+            <h3>Float - flottant :</h3>
+            <p>Les opérations sont les mêmes que les entiers.</p>
+
+            <h3>String - chaîne de caractères :</h3>
+            <p>Pour concaténer des chaînes de caractères (càd accoler deux chaînes ensembles, ex : concaténer "bon" et
+                "jour" donne "bonjour"), on peut utiliser <code>+</code>.</p>
+            <p>On peut aussi “multiplier” une chaîne de caractère par un entier pour indiquer que l’on veut la répéter
+                plusieurs fois. Par exemple, <code>3 * “bonjour ”</code> donnera
+                <code>“bonjour bonjour bonjour “</code>.
+            </p>
+        </div>
+
+        <!-- Section: Les tests -->
+        <div class="section">
+            <h2>Les tests</h2>
+            <p>Il est intéressant de faire des opérations avec des variables mais ce qui est encore plus cool est de les
+                comparer ! Ainsi on peut faire des tests entre variables. Un test, s'il est vrai renvoie
+                <code>True</code> et s'il est faux, renvoie <code>False</code> (ce test renvoie donc un booléen). Pour
+                cela, il existe différents opérateurs.
+            </p>
+
+            <h3>Int et Float :</h3>
+            <p>Comme en mathématiques, on peut utiliser <code>&gt;</code>, <code>&lt;</code>, mais aussi
+                <code>&lt;=</code> et <code>&gt;=</code> qui sont respectivement inférieur ou égal et supérieur ou égal.
+                Pour tester l'égalité entre deux nombres, on écrit <code>==</code>.
+            </p>
+            <p><strong>Attention</strong>, il y a bien DEUX <code>=</code> car un seul signifie l'affectation, ce qui
+                n'est pas l'opération voulue ! La différence a pour opérateur <code>!=</code> ( <code>x != y</code> se
+                traduit par x différent de y ).</p>
+
+            <h3>String :</h3>
+            <p>Pour tester l'égalité de chaîne de caractères, on peut utiliser <code>==</code> (attention, il y a
+                toujours DEUX <code>=</code>) et pour tester la différence <code>!=</code>.</p>
+            <p>De même pour les autres types, l'égalité des variables se testent par l'opérateur <code>==</code>
+                (attention, il y a toujours DEUX <code>=</code>) et la différence par <code>!=</code>.</p>
+        </div>
+
+        <!-- Exercise Block 1 -->
+        <div class="exercise">
+            <h3>EXERCICES</h3>
+            <p>Dire si les tests sont vrais ou faux</p>
+            <ul>
+                <!-- Placeholder exercises based on user prompt -->
+                <li>...</li>
+            </ul>
+        </div>
+
+        <!-- Section: Les types des tests -->
+        <div class="section">
+            <h2>Les types des tests</h2>
+            <p>On verra plus tard pourquoi les tests sont très intéressants mais pour le moment, on peut revenir au type
+                <code>Bool</code>, qui je le rappelle sont les valeurs <code>True</code> et <code>False</code> qui
+                signifie Vraie et Faux.
+            </p>
+            <p>En effet, on peut directement affecter un test à une variable et cette variable est alors de type booléen
+                ! Le test, dans sa définition, renvoie si il est vrai ou faux, ainsi le test renvoie <code>True</code>
+                ou <code>False</code> qui sont des booléens, donc un test est de type booléens.</p>
+            <p><strong>Exemple :</strong> On écrit <code>x=(4&gt;2)</code></p>
+            <p>Puisque 4 est bien strictement supérieur à 2, alors le test <code>4&gt;2</code> est vrai donc ce test
+                renvoie <code>True</code>. La variable <code>x</code> est alors égale à <code>True</code> et si on
+                appelle <code>x</code>, <code>True</code> est renvoyé.</p>
+        </div>
+
+        <!-- Exercise Block 2 -->
+        <div class="exercise">
+            <h3>EXERCICES – Booléens de variables</h3>
+            <p>Exo sur booleens de variables.</p>
+        </div>
+
+        <div class="footer">CodeClique</div>
+    </div>
+</body>
+
+</html>

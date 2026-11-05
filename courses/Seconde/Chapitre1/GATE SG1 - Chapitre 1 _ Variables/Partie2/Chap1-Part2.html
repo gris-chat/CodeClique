@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Chapitre 1 - Partie 2</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet" />
+    <style>
+        :root {
+            --bg-paper: #fdf6e3;
+            --primary: hsl(240, 36%, 50%);
+            --secondary: #27ae60;
+            --accent-1: #ffb74d;
+            --text-dark: #2c3e50;
+            --text-light: #555;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: var(--bg-paper);
+            margin: 0;
+            padding: 30px 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 950px;
+            background: #fff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, .15);
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--accent-1));
+            color: var(--text-dark);
+            padding: 20px;
+            border-radius: 8px;
+            text-align: left;
+            margin-bottom: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.4rem;
+        }
+
+        h1,
+        h2,
+        h3 {
+            text-align: center;
+            color: var(--text-dark);
+            margin-top: 0;
+        }
+
+        h1 {
+            font-size: 2.2rem;
+        }
+
+        h2 {
+            font-size: 1.8rem;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+        }
+
+        .section {
+            margin: 30px 0;
+            padding: 20px;
+            border-left: 6px solid var(--primary);
+            background: #f5f9ff;
+            border-radius: 8px;
+            box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.05);
+        }
+
+        .exercise {
+            margin: 20px 0;
+            padding: 20px;
+            background: #e8f5e9;
+            border-left: 6px solid var(--secondary);
+            border-radius: 8px;
+        }
+
+        .exercise h3 {
+            color: var(--secondary);
+            margin-top: 0;
+        }
+
+        .footer {
+            text-align: center;
+            font-size: 0.9rem;
+            color: var(--text-light);
+            margin-top: 40px;
+        }
+
+        pre {
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            font-family: 'Courier New', monospace;
+            background: #f0f0f0;
+            padding: 10px;
+            border-radius: 4px;
+        }
+
+        .logo {
+            max-width: 150px;
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <img src="logo.png" alt="CodeClique Logo" class="logo">
+            <div class="header-content">
+                <h1>Chapitre 1 : Les variables</h1>
+                <p>CodeClique - Pôle pédagogique</p>
+            </div>
+        </header>
+        <div class="section" id="intro">
+            <h2>Partie 2 : Les types</h2>
+            <p>Comme tous les objets, les variables ont un type. Par exemple, si on prend les fruits, les variables sont
+                comme des fruits : il existe plusieurs espèces.</p>
+            <p>De même, si elles sont différentes, on ne peut pas forcément les mélanger ou faire les mêmes choses avec.
+            </p>
+            <p>Sans plus tarder, les types les plus simples, appelés les types primitifs, sont :</p>
+            <ul>
+                <li><strong>Int - entier</strong> : c'est le type des entiers. Ex : 5, 67, 9554447</li>
+                <li><strong>Float - flottants</strong> : c'est le type des nombres décimaux. Ex : 56.0,
+                    67.373894<br />ATTENTION : les virgules sont des points !</li>
+                <li><strong>Str (string) - chaîne de caractères</strong> : tout texte doit être entre
+                    guillemets.<br />Ex : "bonjour" (attention, bonjour sans guillemets n'est pas une chaîne).<br />Ex :
+                    'Salut tout le monde' ou " Salut :), j'adore python et toi ?"</li>
+                <li><strong>Bool - booléens</strong> : True ou False (1 ↔ True, 0 ↔ False). Très utile malgré son
+                    apparence simple.</li>
+            </ul>
+        </div>
+        <div class="section" id="more">
+            <h2>POUR ALLER PLUS LOIN</h2>
+            <ul>
+                <li><strong>List - liste</strong> : collection d'éléments de n'importe quel type, entre
+                    crochets.<br />Ex : [3,5], ["Adidas ou Nike ?"], [True, 45, ["perso Adidas"]]</li>
+                <li><strong>Dict - dictionnaires</strong> : association clé → valeur, entre accolades.<br />Ex :
+                    {"écurie 1" : [], "écurie 2" : []}</li>
+            </ul>
+            <p>Il existe davantage de types comme les tuples ou les tableaux, abordés plus tard.</p>
+        </div>
+        <div class="exercise">
+            <h3>EXERCICES</h3>
+            <p>1. Quel type ? 56.68 → <code>Float</code></p>
+            <p>2. Quel type ? False → <code>Bool</code></p>
+            <p>3. Quel type ? 0 → <code>Int</code></p>
+            <p>4. Quel type ? "Vous avez aimé le cours ?" → <code>Str</code></p>
+            <p>5. Quel type ? {"Thaïs" : "n'oubliez pas le pouce bleu :)"} → <code>Dict</code></p>
+            <p>6. Quel type ? [1,2,5] → <code>List</code></p>
+            <p>7. Piège</p>
+            <p>8. 18 → <code>Int</code></p>
+        </div>
+        <div class="section" id="variables">
+            <h2>Quel rapport avec les variables ?</h2>
+            <p>Les variables peuvent changer de type au cours du programme.</p>
+            <p>Exemple : <code>x = 4</code> puis <code>x = "changement de type"</code>.</p>
+        </div>
+        <div class="exercise">
+            <h3>EXERCICE</h3>
+            <p>1. Initialise <code>record_de_but = 34</code>. Quel est le type officiel ? → <code>Int</code></p>
+            <p>2. Change <code>record_de_but = "non défini"</code>. Quel est le type maintenant ? → <code>Str</code></p>
+        </div>
+        <div class="footer">CodeClique</div>
+    </div>
+</body>
+
+</html>

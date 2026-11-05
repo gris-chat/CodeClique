@@ -1,0 +1,58 @@
+.sidenav-container {
+  height: 100%;
+}
+
+.sidenav {
+  width: 200px;
+  border-right: 1px solid var(--mat-sys-outline-variant);
+}
+
+.mat-toolbar.mat-primary {
+  position: sticky;
+  display: flex;
+  top: 0;
+  z-index: 10;
+  margin-bottom: 1em;
+  border-bottom: 1px solid var(--mat-sys-outline-variant);
+}
+
+.logo-wrapper {
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  font-weight: bold;
+  height: 3rem;
+  padding: 1rem 0;
+}
+
+.sidenav .mat-mdc-nav-list {
+  padding: 8px;
+}
+
+.toolbar-spacer {
+  flex: 1 1 auto;
+}
+
+mat-sidenav-content {
+  min-height: 100vh;
+}
+
+.main-container {
+  padding: 1em;
+}
+
+.sidenav-layout-wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+mat-nav-list {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.vertical-fill {
+  flex: 1;
+}
