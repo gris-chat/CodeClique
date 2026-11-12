@@ -1,0 +1,16 @@
+<mat-card class="chapter-card" appearance="outlined">
+
+  <mat-card-header>
+    <mat-card-title>{{ chapter().title }}</mat-card-title>
+    <mat-card-subtitle></mat-card-subtitle><!--- TODO -->
+  </mat-card-header>
+
+  <mat-card-content>
+    <p>{{ chapter().description }}</p>
+  </mat-card-content>
+
+  <mat-card-actions>
+    <a matButton="outlined" [routerLink]="['/chapter', chapter().id]">Voir</a>
+    <a matButton="filled" routerLink="" disabled>Continuer</a>
+  </mat-card-actions>
+</mat-card>

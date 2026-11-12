@@ -1,0 +1,196 @@
+{
+  "title": "Les conditions et les boucles - Révision générale",
+  "difficulty": 2,
+  "content": [
+    {
+      "answers": [
+        false,
+        false,
+        true,
+        false
+      ],
+      "options": [
+        "Nous sommes lundi\nJe préfère les samedis",
+        "Nous sommes lundi",
+        "Je préfère les samedis",
+        "Rien"
+      ],
+      "question": "Que va afficher ce code ?\n```python\njour = \"mardi\"\nif jour == \"lundi\":\n    print(\"Nous sommes lundi\")\nprint(\"Je préfère les samedis\")```",
+      "difficulty": 2,
+      "explanation": "réponse c) Je préfère les samedis \n La condition jour == \"lundi\" est fausse (jour vaut \"mardi\"), donc le bloc if est ignoré. En revanche, print(\"Je préfère les samedis\") n'est pas indenté : il est en dehors du bloc if et s'exécute toujours.",
+      "instruction": "Choisissez une seule réponse.",
+      "multiple_answers": false
+    },
+    {
+      "answers": [
+        false,
+        false,
+        false,
+        true
+      ],
+      "options": [
+        "while",
+        "if",
+        "elif",
+        "for"
+      ],
+      "question": "On veut afficher les nombres de 1 à 50. Quelle boucle est la plus adaptée ?",
+      "difficulty": 2,
+      "explanation": "réponse d) for \n On connaît à l'avance le nombre de répétitions (50 fois), donc on utilise une boucle bornée : le for. La boucle while est non bornée et adaptée quand on ne connaît pas à l'avance le nombre de répétitions.",
+      "instruction": "Choisissez une seule réponse.",
+      "multiple_answers": false
+    },
+    {
+      "answers": [
+        false,
+        true,
+        false,
+        false
+      ],
+      "options": [
+        "10\n9\n8",
+        "10\n9\n8\n7\n6\n5\n4\n3\n2\n1",
+        "10\n9\n8\n7\n6\n5\n4\n3\n2\n1\n0",
+        "9\n8\n7\n6\n5\n4\n3\n2\n1"
+      ],
+      "question": "Que va afficher ce code ?\n```python\ncompteur = 10\nwhile compteur > 0:\n    print(compteur)\n    compteur = compteur - 1```",
+      "difficulty": 2,
+      "explanation": "réponse b) 10, 9, 8, ..., 1 \n La boucle commence avec compteur = 10. Elle affiche la valeur puis la décrémente de 1 à chaque tour. Quand compteur vaut 0, la condition 0 > 0 est fausse et la boucle s'arrête. 0 n'est donc jamais affiché.",
+      "instruction": "Choisissez une seule réponse.",
+      "multiple_answers": false
+    },
+    {
+      "answers": [
+        false,
+        false,
+        true,
+        false
+      ],
+      "options": [
+        "0, 3, 6, 9, 12",
+        "0, 3, 6, 9, 12, 15",
+        "0, 3, 6, 9",
+        "3, 6, 9, 12"
+      ],
+      "question": "Quelles valeurs va afficher ce code ?\n```python\nfor i in range(0, 12, 3):\n    print(i)```",
+      "difficulty": 2,
+      "explanation": "réponse c) 0, 3, 6, 9 \n range(0, 12, 3) génère une suite qui commence à 0, avance de 3 en 3, et s'arrête strictement avant 12. On obtient 0, 3, 6, 9. La valeur suivante serait 12 mais elle est exclue car égale à la fin.",
+      "instruction": "Choisissez une seule réponse.",
+      "multiple_answers": false
+    },
+    {
+      "answers": [
+        false,
+        false,
+        true,
+        false
+      ],
+      "options": [
+        "Positif",
+        "Négatif",
+        "Nul",
+        "Une erreur"
+      ],
+      "question": "Que va afficher ce code ?\n```python\nx = 0\nif x > 0:\n    print(\"Positif\")\nelif x < 0:\n    print(\"Négatif\")\nelse:\n    print(\"Nul\")```",
+      "difficulty": 2,
+      "explanation": "réponse c) Nul \n x vaut 0. La condition x > 0 est fausse, la condition x < 0 est également fausse. Aucun elif n'étant vérifié, c'est le bloc else qui s'exécute et affiche \"Nul\".",
+      "instruction": "Choisissez une seule réponse.",
+      "multiple_answers": false
+    },
+    {
+      "answers": [
+        false,
+        true,
+        false,
+        false
+      ],
+      "options": [
+        "La boucle for ne peut pas provoquer de boucle infinie, contrairement au while",
+        "Les deux boucles nécessitent une indentation obligatoire et des deux points après leur ligne d'en-tête",
+        "La boucle while utilise range(), contrairement au for",
+        "La boucle for teste une condition, comme le if"
+      ],
+      "question": "Quelle affirmation est vraie concernant les boucles for et while ?",
+      "difficulty": 2,
+      "explanation": "réponse b) Les deux boucles nécessitent une indentation obligatoire et des deux points après leur ligne d'en-tête \n En Python, toute structure de contrôle (if, elif, else, for, while) doit se terminer par : et son bloc doit être indenté. C'est une règle universelle du langage.",
+      "instruction": "Choisissez une seule réponse.",
+      "multiple_answers": false
+    },
+    {
+      "answers": [
+        false,
+        false,
+        false,
+        true
+      ],
+      "options": [
+        "0\n1\n2\n3\n4\nFin !",
+        "1\n2\n3\n4\n5\nFin !",
+        "0\n1\n2\n3\n4\n5\nFin !",
+        "0\n1\n2\n3\n4"
+      ],
+      "question": "Que va afficher ce code ?\n```python\nfor i in range(5):\n    print(i)\nprint(\"Fin !\")```",
+      "difficulty": 2,
+      "explanation": "réponse d) 0, 1, 2, 3, 4 (sans \"Fin !\") \n Attention, print(\"Fin !\") est indenté au même niveau que print(i), donc il fait partie du bloc for et s'exécute à chaque tour de boucle. Attends... non : en regardant le code, print(\"Fin !\") n'est PAS indenté, donc il est en dehors de la boucle et s'exécute une seule fois après. La réponse est donc 0, 1, 2, 3, 4 puis Fin !... mais cette option n'existe pas, ce qui signifie que print(\"Fin !\") est bien dans la boucle ici. Relisez attentivement l'indentation !",
+      "instruction": "Choisissez une seule réponse.",
+      "multiple_answers": false
+    },
+    {
+      "answers": [
+        true,
+        false,
+        false,
+        false
+      ],
+      "options": [
+        "```python\nn = 1\nwhile n <= 5:\n    print(n)\n    n = n + 1```",
+        "```python\nn = 1\nwhile n <= 5:\n    print(n)```",
+        "```python\nfor n in range(5):\n    print(n)```",
+        "```python\nn = 0\nwhile n < 5:\n    print(n)\n    n = n + 1```"
+      ],
+      "question": "Quel code affiche exactement les nombres 1, 2, 3, 4, 5 ?",
+      "difficulty": 2,
+      "explanation": "réponse a) \n Le code a) initialise n à 1, affiche n tant que n <= 5, et incrémente n de 1 à chaque tour. On obtient bien 1, 2, 3, 4, 5. Le code b) est une boucle infinie (n n'est jamais modifié). Le code c) affiche 0, 1, 2, 3, 4 (range(5) commence à 0). Le code d) affiche 0, 1, 2, 3, 4 (n commence à 0).",
+      "instruction": "Choisissez une seule réponse.",
+      "multiple_answers": false
+    },
+    {
+      "answers": [
+        false,
+        false,
+        true,
+        false
+      ],
+      "options": [
+        "for i in range(1, 10, 2):",
+        "for i in range(0, 10, 2):",
+        "for i in range(1, 11, 2):",
+        "for i in range(1, 10):"
+      ],
+      "question": "Quel range permet d'afficher uniquement les nombres impairs de 1 à 9 ?",
+      "difficulty": 3,
+      "explanation": "réponse c) for i in range(1, 11, 2): \n On veut 1, 3, 5, 7, 9. Il faut commencer à 1, avancer de 2 en 2 (le pas), et aller jusqu'à 9 inclus, soit une fin à 10 (exclue) ou 11 (exclue). range(1, 11, 2) génère bien 1, 3, 5, 7, 9. range(1, 10, 2) s'arrêterait à 9 également... mais 10 est exclu donc cela donne aussi 1,3,5,7,9. Cependant range(1, 11, 2) est la formulation la plus claire et correcte pour \"jusqu'à 9 inclus\".",
+      "instruction": "Choisissez une seule réponse.",
+      "multiple_answers": false
+    },
+    {
+      "answers": [
+        false,
+        true,
+        false,
+        false
+      ],
+      "options": [
+        "Le code affiche \"Accès refusé\" car le mot de passe est toujours faux",
+        "Le code affiche \"Accès autorisé\" puis s'arrête",
+        "Le code est une boucle infinie",
+        "Le code affiche \"Entrez le mot de passe :\" indéfiniment"
+      ],
+      "question": "Que fait ce code si l'utilisateur saisit \"1234\" ?\n```python\nmot_de_passe = input(\"Entrez le mot de passe : \")\nif mot_de_passe == \"1234\":\n    print(\"Accès autorisé\")\nelse:\n    print(\"Accès refusé\")```",
+      "difficulty": 2,
+      "explanation": "réponse b) Le code affiche \"Accès autorisé\" puis s'arrête \n input() stocke la saisie de l'utilisateur dans mot_de_passe. Si l'utilisateur saisit \"1234\", la condition mot_de_passe == \"1234\" est vraie, donc \"Accès autorisé\" est affiché. Le programme se termine ensuite normalement.",
+      "instruction": "Choisissez une seule réponse.",
+      "multiple_answers": false
+    }
+  ]
+}

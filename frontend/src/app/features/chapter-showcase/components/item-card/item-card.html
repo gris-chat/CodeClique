@@ -1,0 +1,35 @@
+@if (itemInfo.isLoading()) {
+<div class="loading-container">
+    <mat-spinner diameter="48"></mat-spinner>
+    <p>Chargement...</p>
+</div>
+} @else if (itemInfo.value(); as item) {
+<div class="item-card-container">
+    <div class="item-card-inner" 
+         role="button" 
+         tabindex="0" 
+         (click)="onCardClick($event, item.id)"
+         (keydown.enter)="onCardClick($event, item.id)"
+         (keydown.space)="$event.preventDefault(); onCardClick($event, item.id)">
+        <mat-icon class="item-icon">{{ typeIcon() }}</mat-icon>
+        <div class="item-title" [title]="item.title">{{ item.title }}</div>
+        <div class="item-status-group">
+            <app-tag color="primary" size="small">
+                {{ typeLabel() }}
+            </app-tag>
+            @if (difficultyLabel()) {
+                <app-tag [color]="(item.difficulty || 1) <= 1 ? 'success' : ((item.difficulty || 1) === 2 ? 'caution' : 'error')" size="small">
+                    {{ difficultyLabel() }}
+                </app-tag>
+            }
+            <mat-icon class="status-icon" [class.done]="isDone()">
+                {{ isDone() ? 'check_circle' : 'radio_button_unchecked' }}
+            </mat-icon>
+        </div>
+    </div>
+</div>
+
+
+} @else if (itemInfo.error()) {
+<div>Erreur de chargement</div>
+}

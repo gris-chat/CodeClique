@@ -1,0 +1,97 @@
+{
+  "title": "Les variables - définition",
+  "difficulty": 1, 
+  "content": [
+        {
+            "answers": [
+                true,
+                false,
+                false,
+                false
+            ],
+            "options": [
+                "=",
+                ":",
+                "==",
+                "→"
+            ],
+            "question": "Quel symbole sert à donner une valeur à une variable en Python ?",
+            "difficulty": 1,
+            "explanation": "réponse a) = \n Le symbole = sert à affecter une valeur à une variable.",
+            "instruction": "Choisissez une seule réponse.",
+            "multiple_answers": false
+        },
+        {
+            "answers": [
+                false,
+                false,
+                true,
+                false
+            ],
+            "options": [
+                "2variable",
+                "ma-variable",
+                "ma_variable",
+                "ma variable"
+            ],
+            "question": "Quel variable est correctement nommée ?",
+            "difficulty": 1,
+            "explanation": "réponse c) ma_variable \n Les variables en Python doivent commencer par une lettre (de a à z ou de A à Z) ou un underscore ( _ ) donc les variables ne peuvent pas commencer par un chiffre ( a) 2variable est donc invalide). De plus, les variables ne doivent pas contenir de tirets (-) ou d’espace, ainsi ni b) ma-variable, ni d) ma variable ne sont valides.",
+            "instruction": "Choisissez une seule réponse.",
+            "multiple_answers": false
+        },
+        {
+            "answers": [
+                true,
+                false,
+                false,
+                false
+            ],
+            "options": [
+                " `x = 10` ",
+                " `10 = x` ",
+                " `x → 10` ",
+                " `10 ← x` "
+            ],
+            "question": "Laquelle de ces lignes affecte la valeur 10 à la variable x en Python ?",
+            "difficulty": 1,
+            "explanation": "réponse a) x = 10 \n  En Python, l’opérateur = permet d’affecter la valeur de droite à la variable de gauche. Ainsi → et ← ne permettent pas d’affecter de valeur à une variable. De plus, l’affectation se fait de gauche à droite, c’est-à-dire que la variable est à la gauche de l'opérateur = et la valeur est à la droite de l’opérateur = . Enfin, un nombre ne peut pas être une variable.  Ainsi les propositions b) 10 = x , c) x → 10 et d) 10 ← x ne sont pas valides.",
+            "instruction": "Choisissez une seule réponse.",
+            "multiple_answers": false
+        },
+        {
+            "answers": [
+                true,
+                false,
+                false,
+                false
+            ],
+            "options": [
+                "2",
+                "x",
+                "Rien",
+                "ERREUR"
+            ],
+            "question": " Que va afficher ce code ? \n ```python \n x = 2 \n print(x)```",
+            "difficulty": 1,
+            "explanation": "réponse a) 2 \n L’instruction x = 2 permet d’affecter 2 à la variable x. Puis, print(x) affiche la valeur actuelle de x qui est 2. \n ATTENTION print(x) affiche 2 tandis que print(“x”) afficherait la lettre x car “x” est une chaîne de caractères du fait des guillemets.",
+            "instruction": "Choisissez une seule réponse.",
+            "multiple_answers": false
+        },
+        {
+            "answers": [
+                false,
+                true
+            ],
+            "options": [
+                "```python \n x=y \n y=x \n ```",
+                "```python \n temp=x \n x=y \n y=temp \n```"
+            ],
+            "question": "Quelle est la bonne façon d’échanger les valeurs de deux variables ?",
+            "difficulty": 2,
+            "explanation": "réponse b) ```python \n temp=x \n x=y \n y=temp \n``` \n L’option a) ne fonctionne pas car x = y écrase la valeur de x, c’est-à-dire que la valeur qui était affectée à x précédemment n’existe plus. Ainsi à la ligne suivante, l’instruction y = x affecte la valeur de x qui est devenue la valeur de y à la variable y, c’est-à-dire que cette instruction affecte à y la valeur de y ! Donc, on obtient à la fin que x ET y ont la même valeur qui était la valeur de y au départ ! \n Dans le cas b), la valeur de x est sauvegardée dans une variable intermédiaire appelée temp avec l’instruction temp = x. Ainsi lors de l’instruction x = y, la valeur affectée à x devient la valeur affectée à y. (A ce moment, les variables x ET y contiennent la MÊME valeur !) Puis, à la dernière ligne, l’instruction y = temp permet d’affecter à y la valeur de départ de x ! ",
+            "instruction": "Choisissez une seule réponse.",
+            "multiple_answers": false
+        }
+    ]
+}

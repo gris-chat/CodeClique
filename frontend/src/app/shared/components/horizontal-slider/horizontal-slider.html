@@ -1,0 +1,38 @@
+@if (nodeInfo.isLoading()) {
+<div class="loading-container">
+  <mat-spinner diameter="40"></mat-spinner>
+</div>
+} @else if (nodeInfo.value(); as node) {
+<div class="slider-header">
+  <h3 class="slider-title">
+    {{ node.title }}
+  </h3>
+</div>
+<div class="slider-wrapper">
+  <app-persona [subject]="node.subject || 'MA'"></app-persona>
+
+  <div class="slider-content-wrapper">
+    @if (showLeftArrow()) {
+    <button mat-icon-button class="nav-btn left" (click)="scroll(-400)">
+      <mat-icon>chevron_left</mat-icon>
+    </button>
+    }
+
+    <div class="slider-content" #sliderContent (scroll)="onScroll($event)">
+      @for (child of chapters(); track (child.child?.id || child.id)) {
+      <app-chapter-card [chapter]="child.child || child" class="slider-item" />
+      }
+    </div>
+
+    @if (showRightArrow()) {
+    <button mat-icon-button class="nav-btn right" (click)="scroll(400)">
+      <mat-icon>chevron_right</mat-icon>
+    </button>
+    }
+  </div>
+</div>
+} @else if (nodeInfo.error()) {
+<div class="error-container">
+  <p>Erreur de chargement du syllabus (ID: {{ id() }})</p>
+</div>
+}

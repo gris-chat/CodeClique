@@ -1,0 +1,118 @@
+{
+  "title": "Les types",
+  "difficulty": 1, 
+  "content": [
+        {
+            "answers": [
+                true,
+                false,
+                false,
+                false
+            ],
+            "options": [
+                "int",
+                "float",
+                "str (string)",
+                "bool"
+            ],
+            "question": "Quel est le type de la variable x ?",
+            "difficulty": 1,
+            "explanation": "réponse a) int \n 25 est un entier donc x contient un entier. Ainsi x est de type int.",
+            "instruction": "Choisissez une seule réponse.",
+            "multiple_answers": false
+        },
+        {
+            "answers": [
+                false,
+                false,
+                true,
+                false
+            ],
+            "options": [
+                "int",
+                "float",
+                "str (string)",
+                "bool"
+            ],
+            "question": "Quel est le type de la variable x ? \n `x = “bonjour”`",
+            "difficulty": 1,
+            "explanation": "réponse c) str \n “Bonjour” est entre guillemets donc est une chaîne de caractères. Ainsi x est de type string.",
+            "instruction": "Choisissez une seule réponse.",
+            "multiple_answers": false
+        },
+        {
+            "answers": [
+                false,
+                true,
+                false,
+                false
+            ],
+            "options": [
+                "int",
+                "float",
+                "str (string)",
+                "bool"
+            ],
+            "question": "Quel type aura la variable x après l'instruction : \n ` x =   25.0 `",
+            "difficulty": 2,
+            "explanation": "réponse b) float \n Un nombre contenant un point décimal, c’est-à-dire une virgule dans la “vraie vie”, est automatiquement interprété comme un float en Python. Ainsi, même s’il n’y a qu’un zéro derrière le point, le type est tout de même un flottant.",
+            "instruction": "Choisissez une seule réponse.",
+            "multiple_answers": false
+        },
+        {
+            "answers": [
+                false,
+                false,
+                true,
+                false
+            ],
+            "options": [
+                "int",
+                "float",
+                "str (string)",
+                "bool"
+            ],
+            "question": " Quel type aura la variable x après l’instruction : \n `x = “25”` ",
+            "difficulty": 2,
+            "explanation": "réponse c) 2 \n Les guillemets, qu’ils soient simples (‘’) ou doubles (“”) créent une chaîne de caractères en Python. Ainsi même si ce qu’il y a entre les guillemets est un nombre, il s’agit d’une chaîne de caractères et donc est de type string. \n Ainsi x = “25” est un string alors que x = 25 est un entier.",
+            "instruction": "Choisissez une seule réponse.",
+            "multiple_answers": false
+        },
+        {
+            "answers": [
+                true,
+                false,
+                false,
+                false
+            ],
+            "options": [
+                "`x=True`",
+                "` x = \"True\" `",
+                "` x = true`",
+                "` x = \"true\" `"
+            ],
+            "question": " ",
+            "difficulty": 2,
+            "explanation": "réponse a) `x=True` \n En Python, les booléens sont True et False. \n Les guillemets, qu’ils soient simples (‘’) ou doubles (“”) créent une chaîne de caractères ainsi b) x = “True” est une chaîne de caractères et non un booléen. De même, d) x = “true” est une chaîne de caractères. ATTENTION c) x = true n’existe pas ! La majuscule est importante ;)",
+            "instruction": "Choisissez une seule réponse.",
+            "multiple_answers": false
+        },
+        {
+            "answers": [
+                false,
+                true,
+                false
+            ],
+            "options": [
+                "`x=\"8\"`",
+                "` x = 8`",
+                "` x = \"huit\"`"
+            ],
+            "question": "Quelle variable contient le nombre 8 ?",
+            "difficulty": 2,
+            "explanation": "réponse b) `x=8` \n En Python, les booléens sont True et False. \n L’instruction x = 8 affecte à la variable x l’entier 8. “8” est une chaîne de caractères donc x = “8” est une chaîne de caractères et non un nombre. De même, x = “huit” est une chaîne de caractères.",
+            "instruction": "Choisissez une seule réponse.",
+            "multiple_answers": false
+        }
+    ]
+}
