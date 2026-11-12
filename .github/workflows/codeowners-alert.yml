@@ -1,0 +1,23 @@
+name: Alerte CODEOWNERS
+
+'on':
+  push:
+    branches: [main]
+    paths: [.github/CODEOWNERS]
+
+permissions:
+  issues: write
+
+jobs:
+  notifier:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Signaler la modification à gris-chat
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPOSITORY: ${{ github.repository }}
+          COMPARE_URL: ${{ github.event.compare }}
+        run: |
+          gh issue create --repo "$REPOSITORY" --assignee gris-chat \
+            --title 'CODEOWNERS a changé sur main' \
+            --body "Le fichier .github/CODEOWNERS a changé sur main. [Voir les changements]($COMPARE_URL)."
