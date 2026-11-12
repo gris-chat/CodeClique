@@ -1,0 +1,177 @@
+{
+  "title": "Les conditions et les boucles - Les conditions",
+  "difficulty": 1,
+  "content": [
+        {
+            "answers": [
+                true,
+                false,
+                false,
+                false
+            ],
+            "options": [
+                "if",
+                "for",
+                "while",
+                "def"
+            ],
+            "question": "Quel mot-clé Python permet de tester si une condition est vraie ?",
+            "difficulty": 1,
+            "explanation": "réponse a) if \n Le mot-clé if permet de tester une condition. Si elle est vraie, le bloc indenté qui suit est exécuté. Sinon, il est ignoré.",
+            "instruction": "Choisissez une seule réponse.",
+            "multiple_answers": false
+        },
+        {
+            "answers": [
+                false,
+                true,
+                false,
+                false
+            ],
+            "options": [
+                "if age >= 18\n    print(\"Majeur\")",
+                "if age >= 18:\n    print(\"Majeur\")",
+                "if age >= 18 ;\n    print(\"Majeur\")",
+                "if (age >= 18)\n    print(\"Majeur\")"
+            ],
+            "question": "Quelle est la syntaxe correcte d'un bloc if en Python ?",
+            "difficulty": 1,
+            "explanation": "réponse b) if age >= 18:\n    print(\"Majeur\") \n En Python, il est obligatoire de mettre deux points (:) après la condition du if. L'indentation est également obligatoire pour délimiter le bloc conditionnel. Le point-virgule (;) n'est pas utilisé en Python pour cela.",
+            "instruction": "Choisissez une seule réponse.",
+            "multiple_answers": false
+        },
+        {
+            "answers": [
+                false,
+                true,
+                false,
+                false
+            ],
+            "options": [
+                "Bravo, tu as la moyenne !",
+                "Il faut encore réviser un peu.",
+                "Les deux messages",
+                "Aucun message"
+            ],
+            "question": "Que va afficher ce code ?\n```python\nnote = 8\nif note >= 10:\n    print(\"Bravo, tu as la moyenne !\")\nelse:\n    print(\"Il faut encore réviser un peu.\")```",
+            "difficulty": 1,
+            "explanation": "réponse b) Il faut encore réviser un peu. \n La variable note vaut 8. La condition note >= 10 est fausse (8 n'est pas supérieur ou égal à 10), donc le bloc if est ignoré. Le programme exécute alors le bloc else et affiche \"Il faut encore réviser un peu.\"",
+            "instruction": "Choisissez une seule réponse.",
+            "multiple_answers": false
+        },
+        {
+            "answers": [
+                false,
+                false,
+                true,
+                false
+            ],
+            "options": [
+                "À terminer un bloc if",
+                "À répéter une instruction plusieurs fois",
+                "À tester une nouvelle condition si la précédente est fausse",
+                "À définir une fonction"
+            ],
+            "question": "À quoi sert l'instruction elif en Python ?",
+            "difficulty": 1,
+            "explanation": "réponse c) À tester une nouvelle condition si la précédente est fausse \n elif est une contraction de else if. Il permet de tester une autre condition si la condition du if (ou d'un elif précédent) est fausse. On peut placer autant de elif que nécessaire entre un if et un else.",
+            "instruction": "Choisissez une seule réponse.",
+            "multiple_answers": false
+        },
+        {
+            "answers": [
+                false,
+                true,
+                false,
+                false
+            ],
+            "options": [
+                "Très chaud !",
+                "Il fait bon.",
+                "Il fait froid, mets un manteau !",
+                "Aucun message"
+            ],
+            "question": "Que va afficher ce code ?\n```python\ntemperature = 20\nif temperature > 30:\n    print(\"Très chaud !\")\nelif temperature > 15:\n    print(\"Il fait bon.\")\nelse:\n    print(\"Il fait froid, mets un manteau !\")```",
+            "difficulty": 1,
+            "explanation": "réponse b) Il fait bon. \n temperature vaut 20. La condition temperature > 30 est fausse, donc le bloc if est ignoré. La condition temperature > 15 est vraie (20 > 15), donc le bloc elif affiche \"Il fait bon.\" et le reste (le bloc else) est ignoré.",
+            "instruction": "Choisissez une seule réponse.",
+            "multiple_answers": false
+        },
+        {
+            "answers": [
+                false,
+                false,
+                true,
+                false
+            ],
+            "options": [
+                "else → if → elif",
+                "elif → else → if",
+                "if → elif → else",
+                "if → else → elif"
+            ],
+            "question": "Dans quel ordre doit-on écrire les blocs conditionnels en Python ?",
+            "difficulty": 1,
+            "explanation": "réponse c) if → elif → else \n L'ordre est toujours : d'abord le bloc if, puis autant de blocs elif que nécessaire, et enfin le bloc else (optionnel). Un else ne peut jamais précéder un elif, et un if doit toujours commencer la structure conditionnelle.",
+            "instruction": "Choisissez une seule réponse.",
+            "multiple_answers": false
+        },
+        {
+            "answers": [
+                false,
+                true,
+                false,
+                false
+            ],
+            "options": [
+                "Un type de variable spécial",
+                "Un décalage vers la droite qui délimite les blocs de code",
+                "Un symbole pour écrire des commentaires",
+                "Une fonction d'affichage"
+            ],
+            "question": "Qu'est-ce que l'indentation en Python ?",
+            "difficulty": 1,
+            "explanation": "réponse b) Un décalage vers la droite qui délimite les blocs de code \n L'indentation est un décalage vers la droite (généralement 4 espaces ou une tabulation). Elle est obligatoire en Python : c'est elle qui indique à Python quelles instructions appartiennent au bloc conditionnel. Oublier l'indentation provoque une erreur.",
+            "instruction": "Choisissez une seule réponse.",
+            "multiple_answers": false
+        },
+        {
+            "answers": [
+                false,
+                false,
+                true,
+                false
+            ],
+            "options": [
+                "Une erreur est levée par Python",
+                "Python exécute automatiquement le dernier elif",
+                "Rien n'est exécuté, le programme continue après le bloc conditionnel",
+                "Python demande à l'utilisateur d'entrer une valeur"
+            ],
+            "question": "Que se passe-t-il si aucune condition if ou elif n'est vraie et qu'il n'y a pas de bloc else ?",
+            "difficulty": 2,
+            "explanation": "réponse c) Rien n'est exécuté, le programme continue après le bloc conditionnel \n Le bloc else est optionnel. Si aucune condition n'est vraie et qu'il n'y a pas de else, Python ignore simplement tout le bloc conditionnel et reprend l'exécution à la première instruction qui suit.",
+            "instruction": "Choisissez une seule réponse.",
+            "multiple_answers": false
+        },
+        {
+            "answers": [
+                false,
+                false,
+                false,
+                true
+            ],
+            "options": [
+                "if mot_de_passe = \"PythonIsCool\":",
+                "if mot_de_passe => \"PythonIsCool\":",
+                "if mot_de_passe = = \"PythonIsCool\":",
+                "if mot_de_passe == \"PythonIsCool\":"
+            ],
+            "question": "Quelle ligne permet de tester si la variable mot_de_passe est égale à \"PythonIsCool\" ?",
+            "difficulty": 1,
+            "explanation": "réponse d) if mot_de_passe == \"PythonIsCool\": \n Pour tester une égalité dans une condition, on utilise l'opérateur == (double égal). Le simple = est l'opérateur d'affectation (pour donner une valeur à une variable), il ne peut pas être utilisé dans une condition. => n'existe pas en Python, et = = avec un espace est invalide.",
+            "instruction": "Choisissez une seule réponse.",
+            "multiple_answers": false
+        }
+    ]
+}

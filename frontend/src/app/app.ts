@@ -1,0 +1,11 @@
+import { Component } from '@angular/core';
+import { NavigationComponent } from '@features/navigation/navigation.component';
+
+@Component({
+  selector: 'app-root',
+  imports: [NavigationComponent],
+  templateUrl: './app.html',
+  styleUrl: './app.scss'
+})
+export class App {
+}

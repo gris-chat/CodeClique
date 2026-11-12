@@ -1,0 +1,11 @@
+services:
+  frontend:
+    develop:
+      watch:
+        - action: sync
+          path: ./frontend/src
+          target: /app/src
+
+  backend:
+    volumes:
+      - ./backend/apps:/app/apps

@@ -1,0 +1,158 @@
+{
+    "title": "Les suites",
+    "difficulty": 1,
+    "content": [
+        {
+            "question": "On considère la fonction suivante :\n```python\ndef Un(n) :\n    un_1 = 1\n    for i in range(n):\n        un = 3 * un_1\n        un_1 = un\n    return un\n```\nQue renvoie l’appel `Un(5)` ?",
+            "options": [
+                "1",
+                "3",
+                "15",
+                "243"
+            ],
+            "answers": [
+                false,
+                false,
+                false,
+                true
+            ],
+            "difficulty": 1,
+            "explanation": "La fonction calcule les termes de la suite. Pour `n=5`, la boucle s'exécute 5 fois, on obtient 243.",
+            "instruction": "Choisissez une seule réponse.",
+            "multiple_answers": false
+        },
+        {
+            "question": "On considère la fonction suivante :\n```python\ndef Un(n) :\n    un_1 = 1\n    for i in range(n):\n        un = 3 * un_1\n        un_1 = un\n    return un\n```\nA calcul de quel terme de la suite $(U_n)$ définie par la relation de récurrence $U_n = 3 \\times U_{n-1}$ et $U_1 = 1$ correspond l’appel `Un(5)` ?",
+            "options": [
+                "U4",
+                "U5",
+                "U6",
+                "U7"
+            ],
+            "answers": [
+                false,
+                false,
+                true,
+                false
+            ],
+            "difficulty": 2,
+            "explanation": "L'appel `Un(5)` exécute la boucle 5 fois. On part de $U_1=1$. À la 1ère itération on calcule $U_2$, à la 5ème on calcule $U_6$.",
+            "instruction": "Choisissez une seule réponse.",
+            "multiple_answers": false
+        },
+        {
+            "question": "Que signifie calculer le seuil d’une suite ?",
+            "options": [
+                "Calculer tous les termes de la suite",
+                "Trouver la valeur maximale de la suite",
+                "Trouver le plus petit rang à partir duquel une condition est vérifiée",
+                "Trouver la formule explicite de la suite"
+            ],
+            "answers": [
+                false,
+                false,
+                true,
+                false
+            ],
+            "difficulty": 1,
+            "explanation": "Le calcul d'un seuil consiste à trouver le plus petit rang à partir duquel une certaine condition est vérifiée.",
+            "instruction": "Choisissez une seule réponse.",
+            "multiple_answers": false
+        },
+        {
+            "question": "Dans la phrase : “Déterminer à partir de quel rang Un >= 100”, à quoi correspond le seuil ?",
+            "options": [
+                "A la valeur 100",
+                "A la valeur de Un",
+                "Au dernier rang de la suite",
+                "Au plus petit rang n tel que Un >= 100"
+            ],
+            "answers": [
+                false,
+                false,
+                false,
+                true
+            ],
+            "difficulty": 1,
+            "explanation": "Le seuil correspond au plus petit rang $n$ tel que la condition $U_n \\ge 100$ soit respectée.",
+            "instruction": "Choisissez une seule réponse.",
+            "multiple_answers": false
+        },
+        {
+            "question": "Pourquoi utilise-t-on une boucle `while` pour calculer un seuil ?",
+            "options": [
+                "Parce que la boucle for est interdite",
+                "Parce que le nombre d’itérations est inconnu à l’avance",
+                "Parce que la suite est toujours définie par récurrence",
+                "Parce que la boucle while est plus rapide"
+            ],
+            "answers": [
+                false,
+                true,
+                false,
+                false
+            ],
+            "difficulty": 2,
+            "explanation": "Parce que le nombre d’itérations est inconnu à l’avance.",
+            "instruction": "Choisissez une seule réponse.",
+            "multiple_answers": false
+        },
+        {
+            "question": "Pour chercher le seuil, quelles variables doivent obligatoirement être initialisées ?",
+            "options": [
+                "Uniquement le terme",
+                "Uniquement le rang",
+                "Le rang et le terme",
+                "Aucune des deux"
+            ],
+            "answers": [
+                false,
+                false,
+                true,
+                false
+            ],
+            "difficulty": 1,
+            "explanation": "Le calcul d’un seuil, c’est trouver un rang. Il faut donc au départ initialiser le rang mais également le terme car c’est une condition sur le terme qui permet de déterminer le rang correspondant au seuil.",
+            "instruction": "Choisissez une seule réponse.",
+            "multiple_answers": false
+        },
+        {
+            "question": "Quelle condition doit-on mettre dans la boucle `while` pour chercher le seuil où Un >= 50 ?",
+            "options": [
+                "Un >= 50",
+                "Un == 50",
+                "Un < 50",
+                "n < 50"
+            ],
+            "answers": [
+                false,
+                false,
+                true,
+                false
+            ],
+            "difficulty": 2,
+            "explanation": "La condition du `while` est TANT QUE la condition est vraie, la boucle tourne. Donc, puisque nous voulons que tant que Un n’est pas supérieur ou égal à 50, c’est-à-dire que tant que Un est strictement inférieur à 50, alors la boucle doit continuer de tourner.",
+            "instruction": "Choisissez une seule réponse.",
+            "multiple_answers": false
+        },
+        {
+            "question": "Pourquoi doit-on incrémenter n dans la boucle `while` du calcul de seuil suivant ?\n```python\nUn = 3\nn = 0\nwhile Un < 1000 :\n    Un = 3 * Un + 1\n    n = n + 1 \nprint(n)\n```",
+            "options": [
+                "Pour éviter une erreur Python",
+                "Pour que le rang corresponde au terme calculé",
+                "Pour arrêter la boucle",
+                "Ce n’est pas nécessaire"
+            ],
+            "answers": [
+                false,
+                true,
+                false,
+                false
+            ],
+            "difficulty": 2,
+            "explanation": "En effet, la condition du `while` ne dépend pas de la variable `n` donc incrémenter cette variable ne change rien pour arrêter la boucle et ne permet pas d’éviter une erreur Python. Cependant, le calcul d’un seuil renvoie le rang minimum à partir duquel un terme vérifie une condition donc à chaque fois qu’un terme est calculé, le rang doit correspondre.",
+            "instruction": "Choisissez une seule réponse.",
+            "multiple_answers": false
+        }
+    ]
+}

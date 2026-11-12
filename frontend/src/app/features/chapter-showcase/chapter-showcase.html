@@ -1,0 +1,46 @@
+<div class="showcase-container">
+  @if (chapterInfo.isLoading()) {
+  <div class="loading-container">
+    <mat-spinner diameter="48"></mat-spinner>
+    <p>Chargement du chapitre...</p>
+  </div>
+  } @else if (chapterInfo.error()) {
+  <div class="loading-container">
+    <mat-icon class="error-icon">block</mat-icon>
+    <p>Vous n'êtes pas autorisé à accéder à cette page.</p>
+  </div>
+  } @else if (chapterInfo.value(); as chapterData) {
+  <div class="hero-section">
+
+    <div class="hero-content">
+      <h1 class="chapter-title">{{ chapterData.title }}</h1>
+
+      <div class="meta-chips">
+        @if (chapterData.grade_level) {
+          <app-tag color="tertiary" icon="school">
+            {{ GRADE_LABELS[chapterData.grade_level] || chapterData.grade_level }}
+          </app-tag>
+        }
+        @if (chapterData.subject) {
+          <app-tag color="secondary" [icon]="chapterData.subject === 'MA' ? 'calculate' : (chapterData.subject === 'PH' ? 'science' : (chapterData.subject === 'CO' ? 'code' : 'menu_book'))">
+            {{ SUBJECT_LABELS[chapterData.subject] || chapterData.subject }}
+          </app-tag>
+        }
+        <app-tag color="primary" icon="list">
+          {{ sectionIds().length }} sections
+        </app-tag>
+      </div>
+    </div>
+  </div>
+
+  <div class="children-container">
+    <mat-accordion multi class="sections-accordion">
+      @for (sectionId of sectionIds(); track sectionId) {
+      <app-section-card [id]="sectionId"></app-section-card>
+      } @empty {
+      <div class="empty-message">Aucune sections dans ce chapitre.</div>
+      }
+    </mat-accordion>
+  </div>
+  }
+</div>

@@ -1,0 +1,47 @@
+@if (toc().length > 0) {
+<h3 class="toc-header">Sommaire</h3>
+<div class="toc-tree">
+  <ng-container *ngTemplateOutlet="nodeList; context: { $implicit: toc() }"></ng-container>
+</div>
+}
+
+<ng-template #nodeList let-nodes>
+  @for (node of nodes; track node.name) {
+    <div class="toc-item">
+      @if (node.children && node.children.length > 0) {
+        <!-- Expandable parent node row -->
+        <div class="toc-node-row">
+          @if (node === toc()[0]) {
+            <!-- No arrow for the very first node (document title) -->
+            <span class="toc-link" (click)="scrollToHeader($event, node.name)">
+              {{ node.name }}
+            </span>
+          } @else {
+            <button mat-icon-button (click)="toggleNode(node.name)" class="toc-toggle" tabIndex="-1">
+              <mat-icon class="toc-chevron" [class.rotated]="isExpanded(node.name)">
+                chevron_right
+              </mat-icon>
+            </button>
+            <span class="toc-link" (click)="scrollToHeader($event, node.name)">
+              {{ node.name }}
+            </span>
+          }
+        </div>
+        
+        <!-- Render children recursively when expanded (first node is always open) -->
+        @if (node === toc()[0] || isExpanded(node.name)) {
+          <div class="toc-children">
+            <ng-container *ngTemplateOutlet="nodeList; context: { $implicit: node.children }"></ng-container>
+          </div>
+        }
+      } @else {
+        <!-- Leaf node (no children) -->
+        <div class="toc-leaf">
+          <span class="toc-link" (click)="scrollToHeader($event, node.name)">
+            {{ node.name }}
+          </span>
+        </div>
+      }
+    </div>
+  }
+</ng-template>

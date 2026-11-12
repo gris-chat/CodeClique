@@ -1,0 +1,101 @@
+{
+  "title": "Les opérations",
+  "difficulty": 1, 
+  "content": [
+        {
+            "answers": [
+                false,
+                true,
+                false,
+                false
+            ],
+            "options": [
+                "9",
+                "7",
+                "3",
+                "5"
+            ],
+            "question": "Quel est le résultat de `1 + 2 * 3` ?",
+            "difficulty": 1,
+            "explanation": "réponse b) 7 \n `*` est l’opérateur pour la multiplication ainsi cette opération est équivalente à 1 + 2 x 3. De plus, la multiplication est prioritaire donc ce calcul donne 1 + 6 = 7.  ",
+            "instruction": "Choisissez une seule réponse.",
+            "multiple_answers": false
+        },
+        {
+            "answers": [
+                false,
+                false,
+                true,
+                false
+            ],
+            "options": [
+                "1",
+                "2",
+                "3",
+                "ERREUR"
+            ],
+            "question": "Qu’affiche ce code ? \n x = 1 \n y = 2 \n z = x + y \n print(z) ",
+            "difficulty": 1,
+            "explanation": "réponse c) 3 \n L’instruction x = 1 permet d’affecter la valeur 1 à la variable x et l’instruction y = 2 permet d’affecter la valeur 2 à la variable y. Ainsi x + y donne 3 et l’instruction z = x + y affecte x + y à la variable z, c’est-à-dire affecte 3 à z. \n Enfin, l’instruction print(z) permet d’afficher ce que contient z donc affiche 3.",
+            "instruction": "Choisissez une seule réponse.",
+            "multiple_answers": false
+        },
+        {
+            "answers": [
+                false,
+                false,
+                true,
+                false
+            ],
+            "options": [
+                "5",
+                "2",
+                "7",
+                "ERREUR"
+            ],
+            "question": "Qu’affiche ce code ? \n x = 5 \n x = x + 2 \n print(x) ",
+            "difficulty": 2,
+            "explanation": "réponse c) 7 \n L’instruction x = 5 permet d’affecter la valeur 5 à la variable x.\n Puis, x + 2 donne 7. Donc l’instruction x = x + 2 affecte la valeur 7 à la variable x. \n Enfin, l’instruction print(x) permet d’afficher ce que contient la variable x or x contient l’entier 7. Ainsi ce code affiche 7.",
+            "instruction": "Choisissez une seule réponse.",
+            "multiple_answers": false
+        },
+        {
+            "answers": [
+                false,
+                false,
+                false,
+                true
+            ],
+            "options": [
+                "256",
+                "41",
+                "32",
+                "17"
+            ],
+            "question": " Que renvoie l’expression suivante ? \n `5 + 3 * 2 ** 2` ",
+            "difficulty": 2,
+            "explanation": "réponse d) 17 \n * est l’opérateur pour la multiplication et ** est l’opérateur pour la puissance. Ainsi cette instruction est équivalente au calcul : 5 + 3 x 22 . Ainsi puisque que la puissance est prioritaire. Cela donne 5 + 3 x 22 = 5 + 3 x 4 = 5 + 12 = 17 .",
+            "instruction": "Choisissez une seule réponse.",
+            "multiple_answers": false
+        },
+        {
+            "answers": [
+                false,
+                false,
+                true,
+                false
+            ],
+            "options": [
+                "1",
+                "2",
+                "3",
+                "ERREUR"
+            ],
+            "question": "Que va afficher le code suivant ? \n x = 1 \n x += 2 \n print(x) ",
+            "difficulty": 3,
+            "explanation": "réponse c) 3 \n L’instruction x = 1 permet d’affecter la valeur 1 à la variable x.\n Puis, x += 2 est une affectation augmentée. En effet, cette instruction est équivalente à l’instruction x = x + 2. Ainsi x += 2 affecte la valeur 3 (1+2) à la variable x. \n Enfin, l’instruction print(x) affiche 3.",
+            "instruction": "Choisissez une seule réponse.",
+            "multiple_answers": false
+        }
+    ]
+}

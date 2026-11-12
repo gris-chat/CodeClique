@@ -1,0 +1,78 @@
+<div class="landing">
+  <section class="hero">
+    <div class="hero-copy">
+      <h1 class="hero-title">
+        Le code,<br>
+        <mark>à ton rythme.</mark>
+      </h1>
+      <p class="hero-subtitle">
+        Apprends à coder en Python à l'aide de cours interactifs et d'exercices pratiques intégrés. Suis ta progression en direct et maîtrise les bases de la programmation pas à pas, sans blabla.
+      </p>
+      <div class="hero-actions">
+        <button mat-fab extended color="primary" routerLink="/courses">
+          <mat-icon>school</mat-icon>
+          Parcourir les cours
+        </button>
+        <button mat-fab extended routerLink="/codeclique-ide">
+          <mat-icon>terminal</mat-icon>
+          Essayer l'éditeur libre Python
+        </button>
+      </div>
+    </div>
+    <div class="hero-visual" aria-hidden="true">
+      <img [src]="theming.resolvedTheme() === 'dark' ? 'img/persona/maths-darkmode.png' : 'img/persona/Maths-Happy.webp'" alt="Apprendre à coder avec CodeClique" class="persona-img">
+    </div>
+  </section>
+
+  <section class="showcase-section">
+    <div class="showcase-content">
+      <span class="badge badge-tertiary">Pratique instantanée</span>
+      <h2 class="showcase-headline">Python directement intégré à tes cours</h2>
+      <p class="showcase-description">
+        Pas besoin d'installer de logiciels ni de configurer ton ordinateur. Tout se passe directement dans ton navigateur : lis la leçon, écris ton code juste à côté, et lance ton programme pour voir le résultat instantanément.
+      </p>
+    </div>
+    
+    <div class="showcase-visual">
+      <div class="component-container">
+        <app-code-block 
+          [initialCode]="'def saluer(nom):\n    print(\'Bonjour \' + nom + \' !\')\n\nsaluer(\'CodeClique\')'" 
+          language="python" 
+          [pyodide]="pyodide">
+        </app-code-block>
+      </div>
+    </div>
+  </section>
+
+  <section class="showcase-section">
+    <div class="showcase-visual">
+      <div class="component-container">
+        <app-quiz [previewData]="quizData" mode="practice"></app-quiz>
+      </div>
+    </div>
+
+    <div class="showcase-content">
+      <span class="badge">Contenu interactif</span>
+      <h2 class="showcase-headline">Des cours vivants et dynamiques</h2>
+      <p class="showcase-description">
+        Oublie les cours théoriques interminables. Valide ce que tu viens d'apprendre grâce à des quiz rapides. Reçois une correction immédiate avec des explications claires pour comprendre tes erreurs et continuer à avancer l'esprit tranquille.
+      </p>
+    </div>
+  </section>
+
+  <section class="showcase-section">
+    <div class="showcase-content">
+      <span class="badge badge-tertiary">Explications visuelles</span>
+      <h2 class="showcase-headline">Des cours illustrés en vidéo</h2>
+      <p class="showcase-description">
+        Parce que c'est toujours plus facile quand c'est imagé, chaque grande notion commence par une courte vidéo explicative. C'est le meilleur moyen de visualiser le fonctionnement des boucles, des variables ou des listes avant de passer à la pratique.
+      </p>
+    </div>
+    
+    <div class="showcase-visual">
+      <div class="component-container">
+        <app-video-block link="https://www.youtube-nocookie.com/embed/KT6v9_X9w3M"></app-video-block>
+      </div>
+    </div>
+  </section>
+</div>

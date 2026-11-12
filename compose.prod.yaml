@@ -1,0 +1,29 @@
+x-logging: &default-logging
+  driver: "local"
+  options:
+    max-size: 10m
+    max-file: "3"
+
+services:
+  proxy:
+    restart: unless-stopped
+    logging: *default-logging
+
+  db:
+    restart: unless-stopped
+    logging: *default-logging
+
+  frontend:
+    restart: unless-stopped
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile.prod
+    logging: *default-logging
+
+  backend:
+    restart: unless-stopped
+    build:
+      context: ./backend
+      dockerfile: Dockerfile.prod
+    logging: *default-logging
+

@@ -1,0 +1,86 @@
+code-editor {
+  display: block;
+  box-sizing: border-box;
+  font-family: 'Roboto Mono';
+  font-size: 1rem;
+  border-radius: 1rem;
+  border: 1px solid var(--mat-sys-outline);
+  overflow: hidden;
+  margin: 1rem 0;
+  min-height: 38px;
+}
+
+.code-block-interactive, .code-block-minimal {
+  position: relative;
+  .code-overlay, .button-group {
+    position: absolute;
+    right: 0; top: 0;
+    display: flex;
+    align-items: center;
+    z-index: 1;
+    .language-label {
+      color: var(--mat-sys-on-primary);
+      background-color: var(--mat-sys-primary);
+      border-radius: 5px;
+      padding: 0 0.25em;
+      margin: 0.5em;
+    }
+  }
+}
+
+.code-block-interactive {
+  .python-console, .python-error {
+    display: flex;
+    gap: 1em;
+
+    .console-header, .error-header {
+      padding: 1em 0;
+      font-weight: bold;
+    }
+
+    .console-body, .error-body {
+      flex: 1;
+      .console-content, .error-content {
+        max-height: 20rem;
+        margin: 0;
+        padding: 1em;
+        white-space: pre-wrap;
+        overflow-y: auto;
+      }
+    }
+  }
+
+  .python-console {
+    .console-header {
+      color: var(--mat-sys-primary);
+    }
+    .console-body .console-content .inline-input {
+      width: 100%;
+      display: inline-flex;
+      align-items: center;
+      vertical-align: middle;
+      input {
+        flex: 1;
+        border: none;
+        background: transparent;
+        border-bottom: 1px solid var(--mat-sys-primary);
+        font-family: inherit;
+        font-size: inherit;
+        outline: none;
+        padding: 0;
+        &:focus {
+          border-bottom-width: 2px;
+        }
+      }
+    }
+  }
+
+  .python-error {
+    color: var(--mat-sys-error);
+  }
+
+  .python-plot {
+    display: flex;
+    justify-content: center;
+  }
+}
