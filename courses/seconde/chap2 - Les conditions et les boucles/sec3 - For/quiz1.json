@@ -1,0 +1,177 @@
+{
+  "title": "Les conditions et les boucles - La boucle for",
+  "difficulty": 1,
+  "content": [
+    {
+      "answers": [
+        false,
+        false,
+        true,
+        false
+      ],
+      "options": [
+        "La boucle for est une boucle non bornée : on ne sait pas à l'avance combien de fois elle tourne",
+        "La boucle for est une boucle qui s'arrête dès que la condition est fausse",
+        "La boucle for est une boucle bornée : on sait à l'avance combien de fois elle tourne",
+        "La boucle for est une boucle qui ne s'exécute qu'une seule fois"
+      ],
+      "question": "Qu'est-ce qui distingue la boucle for de la boucle while ?",
+      "difficulty": 1,
+      "explanation": "réponse c) La boucle for est une boucle bornée : on sait à l'avance combien de fois elle tourne \n La boucle for est dite \"bornée\" car on connaît à l'avance le nombre de répétitions. On l'utilise pour répéter une action un nombre précis de fois ou pour parcourir des éléments un par un. À l'inverse, le while est non borné.",
+      "instruction": "Choisissez une seule réponse.",
+      "multiple_answers": false
+    },
+    {
+      "answers": [
+        false,
+        false,
+        false,
+        true
+      ],
+      "options": [
+        "0, 1, 2, 3, 4, 5",
+        "1, 2, 3, 4, 5",
+        "1, 2, 3, 4",
+        "0, 1, 2, 3, 4"
+      ],
+      "question": "Quelle suite de nombres la fonction range(5) génère-t-elle ?",
+      "difficulty": 1,
+      "explanation": "réponse d) 0, 1, 2, 3, 4 \n range(5) génère une suite qui commence à 0 et s'arrête avant 5. On obtient donc 0, 1, 2, 3, 4. Attention : le nombre passé en argument (ici 5) est exclu de la suite !",
+      "instruction": "Choisissez une seule réponse.",
+      "multiple_answers": false
+    },
+    {
+      "answers": [
+        false,
+        true,
+        false,
+        false
+      ],
+      "options": [
+        "1, 2, 3, 4",
+        "1, 2, 3",
+        "2, 3, 4",
+        "1, 2, 3, 4, 5"
+      ],
+      "question": "Quelle suite de nombres la fonction range(1, 4) génère-t-elle ?",
+      "difficulty": 1,
+      "explanation": "réponse b) 1, 2, 3 \n range(1, 4) génère une suite qui commence à 1 (inclus) et s'arrête avant 4 (exclu). On obtient donc 1, 2, 3. La valeur de fin est toujours exclue.",
+      "instruction": "Choisissez une seule réponse.",
+      "multiple_answers": false
+    },
+    {
+      "answers": [
+        false,
+        false,
+        true,
+        false
+      ],
+      "options": [
+        "for i in range(3) ;\n    print(i)",
+        "for i in range(3)\n    print(i)",
+        "for i in range(3):\n    print(i)",
+        "for (i in range(3)):\n    print(i)"
+      ],
+      "question": "Quelle est la syntaxe correcte d'une boucle for en Python ?",
+      "difficulty": 1,
+      "explanation": "réponse c) for i in range(3):\n    print(i) \n La syntaxe correcte utilise les deux points (:) obligatoires après la ligne du for, et l'indentation obligatoire pour le bloc d'instructions. Le point-virgule (;) est invalide, et les parenthèses autour de la condition ne sont pas nécessaires en Python.",
+      "instruction": "Choisissez une seule réponse.",
+      "multiple_answers": false
+    },
+    {
+      "answers": [
+        false,
+        false,
+        true,
+        false
+      ],
+      "options": [
+        "1\n2\n3",
+        "0\n1\n2\n3",
+        "0\n1\n2",
+        "1\n2\n3\n4"
+      ],
+      "question": "Que va afficher ce code ?\n```python\nfor i in range(3):\n    print(i)```",
+      "difficulty": 1,
+      "explanation": "réponse c) 0, 1, 2 \n range(3) génère la suite 0, 1, 2. La variable i prend successivement ces valeurs et print(i) affiche chacune d'elles. La boucle s'arrête avant 3.",
+      "instruction": "Choisissez une seule réponse.",
+      "multiple_answers": false
+    },
+    {
+      "answers": [
+        false,
+        false,
+        true,
+        false
+      ],
+      "options": [
+        "3 fois",
+        "4 fois",
+        "5 fois",
+        "6 fois"
+      ],
+      "question": "Combien de fois le message sera-t-il affiché ?\n```python\nfor i in range(2, 7):\n    print(\"Bonjour\")```",
+      "difficulty": 1,
+      "explanation": "réponse c) 5 fois \n range(2, 7) génère la suite 2, 3, 4, 5, 6 soit 5 valeurs. La boucle s'exécute donc 5 fois et affiche \"Bonjour\" 5 fois. Pour calculer le nombre d'éléments de range(début, fin) : fin - début = 7 - 2 = 5.",
+      "instruction": "Choisissez une seule réponse.",
+      "multiple_answers": false
+    },
+    {
+      "answers": [
+        false,
+        true,
+        false,
+        false
+      ],
+      "options": [
+        "0, 2, 4, 6, 8, 10",
+        "0, 2, 4, 6, 8",
+        "2, 4, 6, 8, 10",
+        "0, 2, 4, 6, 8, 10, 12"
+      ],
+      "question": "Quelles valeurs va afficher ce code ?\n```python\nfor i in range(0, 10, 2):\n    print(i)```",
+      "difficulty": 2,
+      "explanation": "réponse b) 0, 2, 4, 6, 8 \n range(0, 10, 2) génère une suite qui commence à 0, avance de 2 en 2 (le pas), et s'arrête avant 10. On obtient donc 0, 2, 4, 6, 8. La valeur 10 est exclue car la fin est toujours exclue.",
+      "instruction": "Choisissez une seule réponse.",
+      "multiple_answers": false
+    },
+    {
+      "answers": [
+        false,
+        false,
+        false,
+        true
+      ],
+      "options": [
+        "for i in range(1, 10, 7):",
+        "for i in range(7, 71):",
+        "for i in range(10):",
+        "for i in range(1, 11):"
+      ],
+      "question": "Quelle boucle for permet d'afficher la table de multiplication de 7 (de 7×1 à 7×10) ?",
+      "difficulty": 2,
+      "explanation": "réponse d) for i in range(1, 11): \n Pour afficher 7×1, 7×2, ..., 7×10, la variable i doit prendre les valeurs de 1 à 10 inclus. range(1, 11) génère exactement 1, 2, 3, ..., 10. On peut ensuite écrire print(7 * i) dans la boucle.",
+      "instruction": "Choisissez une seule réponse.",
+      "multiple_answers": false
+    },
+    {
+      "answers": [
+        false,
+        true,
+        false,
+        false
+      ],
+      "options": [
+        "range(1, 100)",
+        "range(1, 101)",
+        "range(0, 100)",
+        "range(100)"
+      ],
+      "question": "Pour calculer la somme des entiers de 1 à 100, quel range faut-il utiliser ?",
+      "difficulty": 2,
+      "explanation": "réponse b) range(1, 101) \n Pour inclure 100 dans la boucle, il faut que la valeur de fin soit 101 (car la fin est toujours exclue). range(1, 101) génère la suite 1, 2, 3, ..., 100, ce qui permet de calculer 1+2+...+100.",
+      "instruction": "Choisissez une seule réponse.",
+      "multiple_answers": false
+    }
+  ]
+}

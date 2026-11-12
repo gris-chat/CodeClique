@@ -1,0 +1,158 @@
+{
+  "title": "Les conditions et les boucles - La boucle while",
+  "difficulty": 1,
+  "content": [
+    {
+      "answers": [
+        false,
+        true,
+        false,
+        false
+      ],
+      "options": [
+        "Tant que la condition est fausse",
+        "Tant que la condition est vraie",
+        "Une seule fois si la condition est vraie",
+        "Un nombre fixe de fois"
+      ],
+      "question": "Quand le bloc d'instructions d'une boucle while est-il exécuté ?",
+      "difficulty": 1,
+      "explanation": "réponse b) Tant que la condition est vraie \n La boucle while répète son bloc d'instructions tant que la condition reste vraie. Dès que la condition devient fausse, la boucle s'arrête et le programme continue à la suite.",
+      "instruction": "Choisissez une seule réponse.",
+      "multiple_answers": false
+    },
+    {
+      "answers": [
+        false,
+        false,
+        true,
+        false
+      ],
+      "options": [
+        "while condition ;\n    # instructions",
+        "while condition\n    # instructions",
+        "while condition:\n    # instructions",
+        "while (condition)\n    # instructions"
+      ],
+      "question": "Quelle est la syntaxe correcte d'une boucle while en Python ?",
+      "difficulty": 1,
+      "explanation": "réponse c) while condition:\n    # instructions \n Comme pour le if, il est obligatoire de mettre deux points (:) après la condition du while. L'indentation est également obligatoire pour indiquer à Python quelles instructions appartiennent à la boucle. Le point-virgule (;) est invalide ici.",
+      "instruction": "Choisissez une seule réponse.",
+      "multiple_answers": false
+    },
+    {
+      "answers": [
+        false,
+        false,
+        false,
+        true
+      ],
+      "options": [
+        "0",
+        "1 2 3 4 5",
+        "5 4 3 2 1 0",
+        "5 4 3 2 1"
+      ],
+      "question": "Que va afficher ce code ?\n```python\ncompteur = 5\nwhile compteur > 0:\n    print(compteur)\n    compteur = compteur - 1```",
+      "difficulty": 1,
+      "explanation": "réponse d) 5 4 3 2 1 \n La boucle commence avec compteur = 5. Tant que compteur > 0, elle affiche la valeur puis la diminue de 1. Elle affiche donc 5, 4, 3, 2, 1. Lorsque compteur vaut 0, la condition 0 > 0 est fausse et la boucle s'arrête. 0 n'est donc jamais affiché.",
+      "instruction": "Choisissez une seule réponse.",
+      "multiple_answers": false
+    },
+    {
+      "answers": [
+        false,
+        true,
+        false,
+        false
+      ],
+      "options": [
+        "Le programme affiche une erreur et s'arrête",
+        "Le programme tourne indéfiniment : c'est une boucle infinie",
+        "La boucle s'exécute une seule fois puis s'arrête",
+        "Python détecte le problème et corrige automatiquement"
+      ],
+      "question": "Que se passe-t-il si on oublie de modifier la variable de la condition dans une boucle while ?",
+      "difficulty": 1,
+      "explanation": "réponse b) Le programme tourne indéfiniment : c'est une boucle infinie \n Si la condition reste toujours vraie (par exemple parce qu'on oublie de décrémenter le compteur), la boucle ne s'arrête jamais. On appelle cela une boucle infinie. Il faut alors arrêter de force l'exécution du programme.",
+      "instruction": "Choisissez une seule réponse.",
+      "multiple_answers": false
+    },
+    {
+      "answers": [
+        false,
+        false,
+        true,
+        false
+      ],
+      "options": [
+        "Connaître à l'avance le nombre exact de répétitions",
+        "Répéter un bloc un nombre fixe de fois",
+        "Répéter un bloc tant qu'une condition reste vraie",
+        "Tester une condition une seule fois"
+      ],
+      "question": "Quelle est la caractéristique principale de la boucle while (appelée aussi boucle non bornée) ?",
+      "difficulty": 1,
+      "explanation": "réponse c) Répéter un bloc tant qu'une condition reste vraie \n La boucle while est dite \"non bornée\" car on ne sait pas forcément à l'avance combien de fois elle va s'exécuter. Elle continue tant que la condition est vraie, ce qui peut représenter 0, 1, 10 ou 1000 répétitions selon la situation.",
+      "instruction": "Choisissez une seule réponse.",
+      "multiple_answers": false
+    },
+    {
+      "answers": [
+        true,
+        false,
+        false,
+        false
+      ],
+      "options": [
+        "Décollage !",
+        "0",
+        "Décollage ! 0",
+        "Rien"
+      ],
+      "question": "Que va afficher ce code après la boucle ?\n```python\ncompteur = 5\nwhile compteur > 0:\n    compteur = compteur - 1\nprint(\"Décollage !\")```",
+      "difficulty": 1,
+      "explanation": "réponse a) Décollage ! \n La boucle décrémente compteur de 5 jusqu'à 0 sans rien afficher. Lorsque compteur vaut 0, la condition 0 > 0 est fausse et la boucle s'arrête. L'instruction print(\"Décollage !\") est en dehors de la boucle (pas d'indentation), elle s'exécute donc une seule fois après la boucle.",
+      "instruction": "Choisissez une seule réponse.",
+      "multiple_answers": false
+    },
+    {
+      "answers": [
+        false,
+        false,
+        true,
+        false
+      ],
+      "options": [
+        "Que la condition soit vraie au départ",
+        "Que le nombre de répétitions soit connu à l'avance",
+        "Que la condition finisse par devenir fausse",
+        "Que la variable soit un entier"
+      ],
+      "question": "Quelle est la règle d'or pour éviter une boucle infinie ?",
+      "difficulty": 1,
+      "explanation": "réponse c) Que la condition finisse par devenir fausse \n Pour qu'une boucle while s'arrête, il faut s'assurer que la condition deviendra fausse à un moment. C'est pourquoi il faut toujours modifier la (ou les) variable(s) impliquée(s) dans la condition à l'intérieur de la boucle.",
+      "instruction": "Choisissez une seule réponse.",
+      "multiple_answers": false
+    },
+    {
+      "answers": [
+        false,
+        true,
+        false,
+        false
+      ],
+      "options": [
+        "3 fois",
+        "0 fois",
+        "1 fois",
+        "Indéfiniment"
+      ],
+      "question": "Combien de fois le bloc de cette boucle sera-t-il exécuté ?\n```python\ncompteur = 0\nwhile compteur > 5:\n    print(compteur)\n    compteur = compteur + 1```",
+      "difficulty": 2,
+      "explanation": "réponse b) 0 fois \n Au départ, compteur vaut 0. La condition 0 > 5 est immédiatement fausse, donc la boucle ne s'exécute jamais. Le programme continue directement après le bloc while. Une boucle while peut donc ne jamais s'exécuter si la condition est fausse dès le départ.",
+      "instruction": "Choisissez une seule réponse.",
+      "multiple_answers": false
+    }
+  ]
+}

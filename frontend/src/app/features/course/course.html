@@ -1,0 +1,60 @@
+<div class="course-container">
+  @if (data(); as d) {
+    <header class="course-header">
+      <div class="title-row">
+        <h1 class="chapter-title">{{ d.title }}</h1>
+        @if (typeLabel() || subjectLabel() || gradeLabel() || difficultyLabel()) {
+          <div class="meta-chips">
+            @if (typeLabel()) {
+              <app-tag color="primary" [icon]="d.type === 'LE' ? 'menu_book' : (d.type === 'QU' ? 'quiz' : 'assignment')">
+                {{ typeLabel() }}
+              </app-tag>
+            }
+            @if (subjectLabel()) {
+              <app-tag color="secondary" [icon]="d.subject === 'MA' ? 'calculate' : (d.subject === 'PH' ? 'science' : (d.subject === 'CO' ? 'code' : 'menu_book'))">
+                {{ subjectLabel() }}
+              </app-tag>
+            }
+            @if (gradeLabel()) {
+              <app-tag color="tertiary" icon="school">
+                {{ gradeLabel() }}
+              </app-tag>
+            }
+            @if (difficultyLabel()) {
+              <app-tag [color]="(d.difficulty || 1) <= 1 ? 'success' : ((d.difficulty || 1) === 2 ? 'caution' : 'error')" icon="speed">
+                {{ difficultyLabel() }}
+              </app-tag>
+            }
+          </div>
+        }
+      </div>
+    </header>
+
+    @if (d.type === 'LE') {
+      <app-lesson [markdown]="d.content?.content || ''"></app-lesson>
+    } @else {
+      <div class="content-layout">
+        <!-- Contenu principal -->
+        <main class="main-column">
+          <div class="content-wrapper">
+            @if (d.type === 'QU') {
+              <app-quiz [quizId]="d.id" mode="graded" (submitted)="onItemCompleted()"></app-quiz>
+            } @else if (d.type === 'EX') {
+              <app-exercise [node]="d"></app-exercise>
+            }
+          </div>
+        </main>
+      </div>
+    }
+  } @else if (course.error()) {
+  <div class="loading-container">
+    <mat-icon class="error-icon">block</mat-icon>
+    <p>Erreur lors du chargement du cours.</p>
+  </div>
+  } @else {
+  <div class="loading-container">
+    <mat-spinner diameter="48"></mat-spinner>
+    <p>Chargement du contenu...</p>
+  </div>
+  }
+</div>
