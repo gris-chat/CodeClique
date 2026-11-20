@@ -123,11 +123,15 @@ export class CodeCliqueIde implements OnInit, OnDestroy {
 
     const notificationId = this.notifications.show('Exécution du code en cours...', 'info', 0);
     context.onComplete(result => {
-      const succeeded = result === 'success';
+      const notification = {
+        success: { message: 'Code exécuté avec succès.', type: 'success' as const },
+        error: { message: "Échec de l'exécution du code.", type: 'error' as const },
+        interrupted: { message: 'Exécution interrompue.', type: 'info' as const }
+      }[result];
       this.notifications.update(
         notificationId,
-        succeeded ? 'Code exécuté avec succès.' : "Échec de l'exécution du code.",
-        result
+        notification.message,
+        notification.type
       );
     });
   }
