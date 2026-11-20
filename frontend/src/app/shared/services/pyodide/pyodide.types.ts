@@ -32,6 +32,7 @@ export class ExecutionContext {
 
   private outputCallback?: (text: string) => void;
   private errorCallback?: (text: string) => void;
+  private completionCallback?: (result: 'success' | 'error') => void;
   private plotCallback?: (base64: string) => void;
   private stdinRequestCallback?: () => void;
 
@@ -50,6 +51,11 @@ export class ExecutionContext {
 
   public onError(callback: (text: string) => void): this {
     this.errorCallback = callback;
+    return this;
+  }
+
+  public onComplete(callback: (result: 'success' | 'error') => void): this {
+    this.completionCallback = callback;
     return this;
   }
 
@@ -76,6 +82,7 @@ export class ExecutionContext {
   _handleOutput(text: string) { this.outputCallback?.(text); }
   /** @internal */
   _handleError(text: string) { this.errorCallback?.(text); }
+  _handleComplete(result: 'success' | 'error') { this.completionCallback?.(result); }
   /** @internal */
   _handlePlot(base64: string) { this.plotCallback?.(base64); }
   /** @internal */

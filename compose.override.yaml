@@ -1,10 +1,16 @@
 services:
   frontend:
+    volumes:
+      - ./frontend/src:/app/src
     develop:
       watch:
         - action: sync
           path: ./frontend/src
           target: /app/src
+        - action: rebuild
+          path: ./frontend/package.json
+        - action: rebuild
+          path: ./frontend/package-lock.json
 
   backend:
     volumes:

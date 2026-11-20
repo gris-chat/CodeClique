@@ -59,6 +59,7 @@ export class Pyodide {
     this.executionHandlers.forEach((context) => {
       context._handleError('Python environment reset.\n');
       context._setRunning(false);
+      context._handleComplete('error');
     });
     this.executionHandlers.clear();
 
@@ -347,7 +348,9 @@ export class Pyodide {
           clearTimeout(handle);
           this.interruptTimeouts.delete(data.id);
         }
-        this.executionHandlers.get(data.id)?._setRunning(false);
+        const context = this.executionHandlers.get(data.id);
+        context?._setRunning(false);
+        context?._handleComplete('success');
         this.executionHandlers.delete(data.id);
         this.interruptRequests.delete(data.id);
         break;
@@ -362,6 +365,7 @@ export class Pyodide {
         const ctx = this.executionHandlers.get(data.id);
         ctx?._handleError(data.error);
         ctx?._setRunning(false);
+        ctx?._handleComplete('error');
         this.executionHandlers.delete(data.id);
         this.interruptRequests.delete(data.id);
         break;

@@ -43,8 +43,8 @@ export class IdeTabView implements OnInit {
     this.toggleConsole.emit();
   }
 
-  run(customCode?: string) {
-    if (!this.pyodide.isReady() || this.isRunning()) return;
+  run(customCode?: string): ExecutionContext | null {
+    if (!this.pyodide.isReady() || this.isRunning()) return null;
 
     this.tab().plot.set('');
     const codeToRun = customCode || this.tab().code();
@@ -57,6 +57,8 @@ export class IdeTabView implements OnInit {
       .onError(err => this.addToRepl('error', err))
       .onPlot(base64 => this.tab().plot.set(base64))
       .onStdinRequest(() => this.tab().waitingForInput.set(true));
+
+    return context;
   }
 
   stop() {
