@@ -6,6 +6,7 @@ import { ShortcutService } from '@shared/services/shortcut/shortcut';
 import { MenuBar } from './components/menu-bar/menu-bar';
 import { IdeTabView } from './components/ide-tab-view/ide-tab-view';
 import { IdeTour, TourStep } from './components/ide-tour/ide-tour';
+import { NotificationService } from '@shared/services/notification.service';
 
 @Component({
   selector: 'app-codeclique-ide',
@@ -21,6 +22,7 @@ import { IdeTour, TourStep } from './components/ide-tour/ide-tour';
 export class CodeCliqueIde implements OnInit, OnDestroy {
   workspace = inject(WorkspaceService);
   shortcutService = inject(ShortcutService);
+  private notifications = inject(NotificationService);
 
   private shortcutUnregister: (() => void)[] = [];
 
@@ -115,7 +117,23 @@ export class CodeCliqueIde implements OnInit, OnDestroy {
 
   runActive() {
     const activeTab = this.workspace.activeTabHandler();
-    this.tabViews().find(v => v.tab() === activeTab)?.run();
+    const activeView = this.tabViews().find(v => v.tab() === activeTab);
+    const context = activeView?.run();
+    if (!context) return;
+
+    const notificationId = this.notifications.show('Exécution du code en cours...', 'info', 0);
+    context.onComplete(result => {
+      const notification = {
+        success: { message: 'Code exécuté avec succès.', type: 'success' as const },
+        error: { message: "Échec de l'exécution du code.", type: 'error' as const },
+        interrupted: { message: 'Exécution interrompue.', type: 'info' as const }
+      }[result];
+      this.notifications.update(
+        notificationId,
+        notification.message,
+        notification.type
+      );
+    });
   }
 
   stopActive() {

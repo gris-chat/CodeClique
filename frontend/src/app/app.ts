@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
 import { NavigationComponent } from '@features/navigation/navigation.component';
+import { ToastComponent } from './shared/components/toast/toast.component';
 
 @Component({
   selector: 'app-root',
-  imports: [NavigationComponent],
+  imports: [NavigationComponent, ToastComponent],
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })

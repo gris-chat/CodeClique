@@ -1,0 +1,12 @@
+<div class="toast-container">
+  @for (n of notificationService.notifications(); track n.id) {
+    <div
+      class="toast"
+      [class.toast--error]="n.type === 'error'"
+      [class.toast--info]="n.type === 'info'"
+      role="status">
+      <span>{{ n.message }}</span>
+      <button type="button" aria-label="Fermer" (click)="notificationService.dismiss(n.id)">×</button>
+    </div>
+  }
+</div>
