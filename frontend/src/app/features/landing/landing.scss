@@ -76,6 +76,42 @@
   flex-wrap: wrap;
   gap: 1rem;
   margin-top: 1rem;
+
+  .btn-browse-courses {
+    --btn-bg: light-dark(var(--mat-sys-primary), var(--mat-sys-primary-container));
+    --btn-fg: light-dark(var(--mat-sys-on-primary), var(--mat-sys-on-primary-container));
+    --mat-fab-container-color: var(--btn-bg);
+    --mat-fab-label-text-color: var(--btn-fg);
+    --mat-fab-icon-color: var(--btn-fg);
+    background-color: var(--btn-bg) !important;
+    color: var(--btn-fg) !important;
+
+    mat-icon {
+      color: var(--btn-fg) !important;
+    }
+
+    &:hover {
+      filter: brightness(0.92);
+    }
+  }
+
+  button[mat-fab]:not(.btn-browse-courses) {
+    --btn-bg: light-dark(var(--mat-sys-primary-container), var(--mat-sys-primary));
+    --btn-fg: light-dark(var(--mat-sys-on-primary-container), var(--mat-sys-on-primary));
+    --mat-fab-container-color: var(--btn-bg);
+    --mat-fab-label-text-color: var(--btn-fg);
+    --mat-fab-icon-color: var(--btn-fg);
+    background-color: var(--btn-bg) !important;
+    color: var(--btn-fg) !important;
+
+    mat-icon {
+      color: var(--btn-fg) !important;
+    }
+
+    &:hover {
+      filter: brightness(0.95);
+    }
+  }
 }
 
 .persona-img {

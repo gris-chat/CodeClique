@@ -1,0 +1,88 @@
+<div class="connexion-container">
+  <div class="connexion-card">
+    <h1>Inscription</h1>
+    <p class="subtitle">Créez votre compte CodeClique</p>
+
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+      <div class="name-row">
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Prénom</mat-label>
+          <input matInput formControlName="first_name" autocomplete="given-name" />
+          <mat-icon matPrefix>person</mat-icon>
+          @if (registerForm.get('first_name')?.hasError('required') && registerForm.get('first_name')?.touched) {
+            <mat-error>Le prénom est requis</mat-error>
+          } @else if (registerForm.get('first_name')?.hasError('serverError')) {
+            <mat-error>{{ registerForm.get('first_name')?.getError('serverError') }}</mat-error>
+          }
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Nom</mat-label>
+          <input matInput formControlName="last_name" autocomplete="family-name" />
+          <mat-icon matPrefix>badge</mat-icon>
+          @if (registerForm.get('last_name')?.hasError('required') && registerForm.get('last_name')?.touched) {
+            <mat-error>Le nom est requis</mat-error>
+          } @else if (registerForm.get('last_name')?.hasError('serverError')) {
+            <mat-error>{{ registerForm.get('last_name')?.getError('serverError') }}</mat-error>
+          }
+        </mat-form-field>
+      </div>
+
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Adresse email</mat-label>
+        <input matInput formControlName="email" type="email" autocomplete="email" />
+        <mat-icon matPrefix>email</mat-icon>
+        @if (registerForm.get('email')?.hasError('required') && registerForm.get('email')?.touched) {
+          <mat-error>L'email est requis</mat-error>
+        } @else if (registerForm.get('email')?.hasError('email') && registerForm.get('email')?.touched) {
+          <mat-error>Adresse email invalide</mat-error>
+        } @else if (registerForm.get('email')?.hasError('serverError')) {
+          <mat-error>{{ registerForm.get('email')?.getError('serverError') }}</mat-error>
+        }
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Mot de passe</mat-label>
+        <input matInput formControlName="password"
+               [type]="showPassword() ? 'text' : 'password'"
+               autocomplete="new-password" />
+        <mat-icon matPrefix>lock</mat-icon>
+        <button mat-icon-button matSuffix type="button"
+                (click)="showPassword.set(!showPassword())"
+                [attr.aria-label]="showPassword() ? 'Masquer le mot de passe' : 'Afficher le mot de passe'">
+          <mat-icon>{{ showPassword() ? 'visibility_off' : 'visibility' }}</mat-icon>
+        </button>
+        <mat-hint>8 caractères minimum</mat-hint>
+        @if (registerForm.get('password')?.hasError('required') && registerForm.get('password')?.touched) {
+          <mat-error>Le mot de passe est requis</mat-error>
+        } @else if (registerForm.get('password')?.hasError('minlength') && registerForm.get('password')?.touched) {
+          <mat-error>8 caractères minimum</mat-error>
+        } @else if (registerForm.get('password')?.hasError('serverError')) {
+          <mat-error>{{ registerForm.get('password')?.getError('serverError') }}</mat-error>
+        }
+      </mat-form-field>
+
+      @if (errorMessage()) {
+        <div class="error-banner" role="alert" aria-live="polite">
+          <mat-icon>error</mat-icon>
+          <span>{{ errorMessage() }}</span>
+        </div>
+      }
+
+      <button mat-flat-button color="primary" type="submit"
+              class="submit-btn full-width"
+              [disabled]="registerForm.invalid || isLoading()">
+        @if (isLoading()) {
+          <mat-spinner diameter="22"></mat-spinner>
+        } @else {
+          Créer un compte
+        }
+      </button>
+    </form>
+
+    <div class="register-prompt">
+      <span>Déjà un compte ?</span>
+      <a mat-button routerLink="/login">Se connecter</a>
+    </div>
+  </div>
+</div>

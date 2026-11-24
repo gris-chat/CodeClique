@@ -4,6 +4,13 @@ import { Api } from '../api/api';
 import { UserInfo } from '../node/node.types';
 import { firstValueFrom } from 'rxjs';
 
+export interface RegisterPayload {
+  first_name: string;
+  last_name: string;
+  email: string;
+  password: string;
+}
+
 @Injectable({
   providedIn: 'root',
 })
@@ -21,6 +28,17 @@ export class Auth {
     await this.api.post<string>(`${this.apiUrl}/auth/login/`, body, { responseType: 'text' });
 
     return this.getMe();
+  }
+
+  async register(payload: RegisterPayload): Promise<UserInfo | null> {
+    await fetch(`${this.apiUrl}/auth/login/`);
+    await this.api.post<unknown>(`${this.apiUrl}/auth/register/`, payload);
+
+    try {
+      return await this.getMe();
+    } catch {
+      return null;
+    }
   }
 
   async logout(): Promise<void> {
