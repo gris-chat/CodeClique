@@ -1,16 +1,22 @@
 import random
 import string
 
+from drf_spectacular.utils import extend_schema
 from rest_framework import status
 from rest_framework.decorators import action
 from rest_framework.mixins import CreateModelMixin, RetrieveModelMixin, UpdateModelMixin
-from rest_framework.permissions import IsAuthenticated, IsAdminUser
+from rest_framework.permissions import AllowAny, IsAuthenticated, IsAdminUser
 from rest_framework.response import Response
 from rest_framework.viewsets import GenericViewSet, ModelViewSet
 
 from apps.users.models import User, ClassGroup, Membership
 from apps.users.permissions import IsGroupMember, IsTeacher, IsGroupAdmin, IsMembershipGroupAdmin
-from apps.users.serializers import UserSerializer, ClassGroupSerializer, MembershipSerializer
+from apps.users.serializers import (
+    AccountRegistrationSerializer,
+    ClassGroupSerializer,
+    MembershipSerializer,
+    UserSerializer,
+)
 
 
 class UserViewSet(RetrieveModelMixin, UpdateModelMixin, GenericViewSet):
@@ -18,11 +24,21 @@ class UserViewSet(RetrieveModelMixin, UpdateModelMixin, GenericViewSet):
     queryset = User.objects.all()
 
     def get_permissions(self):
+        if self.action == 'register':
+            return [AllowAny()]
         self.permission_classes = [IsAuthenticated]
         if self.action in ['retrieve', 'update']:
             self.permission_classes += [IsAdminUser]
 
         return super().get_permissions()
+
+    @extend_schema(responses={201: AccountRegistrationSerializer})
+    @action(detail=False, methods=['POST'], serializer_class=AccountRegistrationSerializer)
+    def register(self, request):
+        serializer = self.get_serializer(data=request.data)
+        serializer.is_valid(raise_exception=True)
+        serializer.save()
+        return Response(serializer.data, status=status.HTTP_201_CREATED)
 
     @action(detail=False, methods = ['GET', 'PUT'])
     def me(self, request):
