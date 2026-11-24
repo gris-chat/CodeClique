@@ -1,6 +1,6 @@
 import { Component, inject, signal } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
-import { Router, ActivatedRoute } from '@angular/router';
+import { Router, ActivatedRoute, RouterLink } from '@angular/router';
 
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
@@ -15,6 +15,7 @@ import { HttpErrorResponse } from '@angular/common/http';
   selector: 'app-login',
   imports: [
     ReactiveFormsModule,
+    RouterLink,
     MatFormFieldModule,
     MatInputModule,
     MatButtonModule,
@@ -39,7 +40,7 @@ export class Login {
   private redirectUrl = '/dashboard';
 
   loginForm = this.fb.group({
-    username: ['', [Validators.required]],
+    email: ['', [Validators.required, Validators.email]],
     password: ['', [Validators.required]],
   });
 
@@ -60,17 +61,17 @@ export class Login {
     this.isLoading.set(true);
     this.errorMessage.set('');
 
-    const { username, password } = this.loginForm.value;
+    const { email, password } = this.loginForm.value;
 
     try {
-      await this.authService.login(username!, password!);
+      await this.authService.login(email!, password!);
       this.isLoading.set(false);
       this.router.navigateByUrl(this.redirectUrl);
     } catch (err: unknown) {
       this.isLoading.set(false);
       if (err instanceof HttpErrorResponse) {
         if (err.status === 401 || err.status === 403 || err.error?.detail === 'Invalid credentials') {
-          this.errorMessage.set("Nom d'utilisateur ou mot de passe incorrect.");
+          this.errorMessage.set('Adresse email ou mot de passe incorrect.');
         } else if (err.status === 0) {
           this.errorMessage.set('Impossible de contacter le serveur. Vérifiez votre connexion.');
         } else {
