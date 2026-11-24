@@ -19,9 +19,22 @@
   text-decoration: none;
   display: flex;
   justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
   font-weight: bold;
   height: 3rem;
   padding: 1rem 0;
+  cursor: pointer;
+  position: relative;
+  z-index: 2;
+  user-select: none;
+
+  .logo {
+    max-height: 100%;
+    max-width: 100%;
+    object-fit: contain;
+    pointer-events: none;
+  }
 }
 
 .sidenav .mat-mdc-nav-list {

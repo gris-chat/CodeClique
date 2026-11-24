@@ -7,11 +7,13 @@
 
       <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
         <mat-form-field appearance="outline" class="full-width">
-          <mat-label>Nom d'utilisateur</mat-label>
-          <input matInput formControlName="username" autocomplete="username" />
-          <mat-icon matPrefix>person</mat-icon>
-          @if (loginForm.get('username')?.hasError('required') && loginForm.get('username')?.touched) {
-            <mat-error>Le nom d'utilisateur est requis</mat-error>
+          <mat-label>Adresse email</mat-label>
+          <input matInput formControlName="email" type="email" autocomplete="email" />
+          <mat-icon matPrefix>email</mat-icon>
+          @if (loginForm.get('email')?.hasError('required') && loginForm.get('email')?.touched) {
+            <mat-error>L'email est requis</mat-error>
+          } @else if (loginForm.get('email')?.hasError('email') && loginForm.get('email')?.touched) {
+            <mat-error>Adresse email invalide</mat-error>
           }
         </mat-form-field>
 
@@ -31,6 +33,10 @@
           }
         </mat-form-field>
 
+        <button mat-button type="button" class="forgot-password-inline" (click)="showForgotPassword.set(true)">
+          Mot de passe oublié ?
+        </button>
+
         @if (errorMessage()) {
           <div class="error-banner">
             <mat-icon>error</mat-icon>
@@ -49,9 +55,10 @@
         </button>
       </form>
 
-      <button mat-button class="forgot-password-btn" (click)="showForgotPassword.set(true)">
-        Mot de passe oublié ?
-      </button>
+      <div class="register-prompt">
+        <span>Pas de compte ?</span>
+        <a mat-button routerLink="/register">Créer un compte</a>
+      </div>
     </div>
   </div>
 }

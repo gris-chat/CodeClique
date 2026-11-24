@@ -68,8 +68,29 @@ form {
   }
 }
 
+.forgot-password-inline {
+  align-self: flex-end;
+  margin: -8px 0 8px;
+  font-size: 0.85rem;
+}
+
 .forgot-password-btn {
   display: block;
   margin: 16px auto 0;
   font-size: 0.85rem;
+}
+
+.register-prompt {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0;
+  margin-top: 16px;
+  font-size: 0.85rem;
+  color: var(--mat-sys-on-surface-variant);
+
+  a {
+    padding: 0 6px;
+    min-width: auto;
+  }
 }
